@@ -1,39 +1,51 @@
 <!DOCTYPE html>
-  <html lang ="en">
-    <head>
+<html lang="en">
 
-        <meta charset="utf-8">
-        <title>Hungry Hippos</title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-        
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-        <script type = "text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
-        
+<head>
 
-<!-- HTTPS required. HTTP will give a 403 forbidden response -->
-<script src="https://sdk.accountkit.com/en_US/sdk.js"></script>
+  <meta charset="utf-8">
+  <title>Hungry Hippos</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+    crossorigin="anonymous">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
 
 
-    </head>
-    <body>
-        <script src="app.js"></script>
-        <script>
-            window.fbAsyncInit = function() {
-              FB.init({
-                appId            : '1496577137108254',
-                autoLogAppEvents : true,
-                xfbml            : true,
-                version          : 'v2.11'
-              });
-            };
-          
-            (function(d, s, id){
-               var js, fjs = d.getElementsByTagName(s)[0];
-               if (d.getElementById(id)) {return;}
-               js = d.createElement(s); js.id = id;
-               js.src = "https://connect.facebook.net/en_US/sdk.js";
-               fjs.parentNode.insertBefore(js, fjs);
-             }(document, 'script', 'facebook-jssdk'));
-          </script>
-    </body>
-  </html>
+  <!-- HTTPS required. HTTP will give a 403 forbidden response -->
+  <script src="https://sdk.accountkit.com/en_US/sdk.js"></script>
+
+
+</head>
+
+<body>
+
+  <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+  </fb:login-button>
+  <script src="app.js"></script>
+
+  <script>
+    window.fbAsyncInit = function () {
+      FB.init({
+        appId: '1496577137108254',
+        autoLogAppEvents: true,
+        xfbml: true,
+        version: 'v2.11'
+      });
+
+      FB.AppEvents.logPageView();
+
+    };
+
+    (function (d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) { return; }
+      js = d.createElement(s); js.id = id;
+      js.src = "https://connect.facebook.net/en_US/sdk.js";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  </script>
+
+</body>
+
+</html>
