@@ -9,7 +9,7 @@ const edamAppKey = "cdded1f6d7a29716aec7adcec57b419e";
 
 
 $(document).ready(function() {
-    var edamIng = 'chicken';  //Spaces need to be translated to %20. required  
+    var edamIng = 'Margarita';  //Spaces need to be translated to %20. required  
     var edamURL = 'https://api.edamam.com/search?q='+edamIng+'&app_id='+edamAppID+'&app_key='+edamAppKey;
     $.ajax({
       url: edamURL,
