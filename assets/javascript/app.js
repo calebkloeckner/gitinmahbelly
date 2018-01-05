@@ -19,14 +19,14 @@ $(document).ready(function() {
     });
 
     
-    var imdataProduct = "product_identifier=014100044208";
-    var imURL = "https://www.iamdata.co/v1/products?"+imdataProduct+"&page=1&per_page=10&full_resp=false&client_id=" + imdataKey + "&client_secret=" + imdataSKey;
-    $.ajax({
-      url: imURL,
-      method: 'GET'
-    }).done(function(response) {
-      console.log(response)
-    });
+    // var imdataProduct = "product_identifier=014100044208";
+    // var imURL = "https://www.iamdata.co/v1/products?"+imdataProduct+"&page=1&per_page=10&full_resp=false&client_id=" + imdataKey + "&client_secret=" + imdataSKey;
+    // $.ajax({
+    //   url: imURL,
+    //   method: 'GET'
+    // }).done(function(response) {
+    //   console.log(response)
+    // });
 
 
 });
