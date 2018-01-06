@@ -32,10 +32,10 @@ $(document).ready(function () {
             // for (let i = 0; i < 8; i++) {
             //     recipes.push(response.hits[i].recipe.image);
             // }
-            for (let i = 0; i < 8; i++) {
-                recipes.push(response.hits[i].recipe.image);
-                console.log(response.hits[i].recipe.image);  
-            }
+            // for (let i = 0; i < 8; i++) {
+            //     recipes.push(response.hits[i].recipe.image);
+            //     console.log(response.hits[i].recipe.image);  
+            // }
             
             
             console.log(response.data);
