@@ -1,0 +1,150 @@
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+
+body {
+  font-family: 'Raleway', sans-serif;
+
+}
+
+nav ul a,
+nav .brand-logo {
+  color: #444;
+}
+
+p {
+  line-height: 2rem;
+}
+
+.top-nav-links {
+  color: #faf3dd;
+  font-size:22pt;
+  letter-spacing: 2px;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+}
+
+#top-nav {
+  border: 0;
+  background: transparent;
+  width: 100%;
+  height: auto;
+  text-align:center;
+  margin: auto;
+  display: inline-block;
+}
+
+.nav-links {
+  margin: auto;
+  text-align: center;
+  display: inline-block;
+}
+
+
+.button-collapse {
+  color: #26a69a;
+}
+
+.parallax-container {
+  min-height: 600px;
+  /* line-height:100%; */
+  height: auto;
+  color: rgba(255,255,255,.9);
+  vertical-align: middle;
+  position: relative;
+}
+  .parallax-container .section {
+    width: 100%;
+  }
+
+@media only screen and (max-width : 992px) {
+  .parallax-container .section {
+    position: absolute;
+    top: 40%;
+  }
+  #index-banner .section {
+    top: 10%;
+  }
+}
+
+@media only screen and (max-width : 600px) {
+  #index-banner .section {
+    top: 0;
+  }
+}
+
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+  font-size: inherit;
+}
+
+footer.page-footer {
+  margin: 0;
+}
+
+.footer-title {
+  color: white;
+  font-size: 18pt;
+  text-align: left;
+  text-transform: uppercase;
+  letter-spacing: 5pt;
+  font-weight: bold;
+}
+
+.header1 {
+  font-family: 'Raleway', sans-serif;
+  letter-spacing: 10pt;
+  size: 18pt;
+  color: white;
+}
+
+.header2{
+  font-family: 'Raleway', sans-serif;
+  font-size: 100pt;
+  color: white;
+  margin: 0;
+}
+
+h5 {
+  text-transform: uppercase;
+  color: #333329;
+  letter-spacing: 5pt;
+  font-size: 24pt;
+  text-align: center;
+  font-weight: bold;
+  line-height: 50pt;
+}
+
+h6 {
+  text-transform: uppercase;
+  color: #b8bc84;
+  letter-spacing: 5pt;
+  font-size: 24pt;
+  text-align: center;
+  font-weight: bold;
+  line-height: 50pt;
+}
+
+#section2 {
+  padding: 0px 10px 0px 10px;
+  text-align:center;
+}
+
+.recipes {
+  width: 70%;
+  height: auto;
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-top: 5%;
+  vertical-align: middle;
+  border: black 1px solid;
+}
