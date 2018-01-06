@@ -18,18 +18,26 @@ $(document).ready(function () {
     topRecipes();
     $('.modal').modal();
 
-    $('#modal1').on('click', function () {
+    $(document).on('click', ".food", function () {
+        $('#modal1').modal('open');
+        console.log("boogers");
+        let modalTitle;
         const edamAppID = "c1724022";
         const edamAppKey = "cdded1f6d7a29716aec7adcec57b419e";
-        var edamURL = 'https://api.edamam.com/search?q=' + '&app_id=' + edamAppID + '&app_key=' + edamAppKey + "&limit=100";
+        var edamURL = 'https://api.edamam.com/search?q=' + '&app_id=' + edamAppID + '&app_key=' + edamAppKey + "&limit=10";
         $.ajax({
             url: edamURL,
             method: 'GET'
         }).done(function (response) {
-            let results = response.data;
-            for (var i = 0; i < results.length; i++) {
-                
+            // for (let i = 0; i < 8; i++) {
+            //     recipes.push(response.hits[i].recipe.image);
+            // }
+            for (let i = 0; i < 8; i++) {
+                recipes.push(response.hits[i].recipe.image);
+                console.log(response.hits[i].recipe.image);  
             }
+            
+            
             console.log(response.data);
         });
     });
@@ -49,11 +57,11 @@ $(document).ready(function () {
         method: 'GET'
     }).done(function (response) {
         console.log(response);
-        for (let i = 0; i < 9; i++) {
+        for (let i = 0; i < 8; i++) {
             recipes.push(response.hits[i].recipe.image);
             console.log(response.hits[i].recipe.image);
-            
-            
+
+
         }
         topRecipes();
     });
