@@ -17,3 +17,8 @@ h1 {
 li {
     align-content: left;
 }
+
+.images {
+    width: 300px;
+    height: 200px;
+}
