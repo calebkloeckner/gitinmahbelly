@@ -39,6 +39,7 @@ p {
   text-align:center;
   margin: auto;
   display: inline-block;
+  padding-top: 2%;
 }
 
 .nav-links {
@@ -139,12 +140,37 @@ h6 {
   text-align:center;
 }
 
+#section2-about {
+  padding: 0px 40px 25px 40px;
+  text-align:center;
+}
+
 .recipes {
   width: 70%;
   height: auto;
   margin-left: 15%;
   margin-right: 15%;
   margin-top: 5%;
+  margin-bottom: 5%;
   vertical-align: middle;
-  border: black 1px solid;
+  padding:10px;
+}
+
+
+.my-recipes {
+  border: 1px solid black;
+  padding: 20px;
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+
+.my-ingredients {
+  border: 1px solid black;
+  padding: 20px;
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 5%;
 }
