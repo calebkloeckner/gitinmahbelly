@@ -9,7 +9,11 @@ const edamAppKey = "cdded1f6d7a29716aec7adcec57b419e";
 
 
 $(document).ready(function() {
+<<<<<<< HEAD
     var edamIng = 'Margarita';  //Spaces need to be translated to %20. required  
+=======
+    var edamIng = 'chicken';  //Spaces need to be translated to %20. required  
+>>>>>>> 2285fc006e270b647d06ecb78bd44cc4cefe3524
     var edamURL = 'https://api.edamam.com/search?q='+edamIng+'&app_id='+edamAppID+'&app_key='+edamAppKey;
     $.ajax({
       url: edamURL,
@@ -18,8 +22,20 @@ $(document).ready(function() {
       console.log(response)
     });
 
+<<<<<<< HEAD
     
     // var imdataProduct = "product_identifier=014100044208";
+=======
+    $.ajax({
+        url: edamURL,
+        method: 'GET'
+      }).done(function(response) {
+        console.log(response.hits[0].recipe)
+      });
+});
+
+   // var imdataProduct = "product_identifier=014100044208";
+>>>>>>> 2285fc006e270b647d06ecb78bd44cc4cefe3524
     // var imURL = "https://www.iamdata.co/v1/products?"+imdataProduct+"&page=1&per_page=10&full_resp=false&client_id=" + imdataKey + "&client_secret=" + imdataSKey;
     // $.ajax({
     //   url: imURL,
@@ -28,6 +44,7 @@ $(document).ready(function() {
     //   console.log(response)
     // });
 
+<<<<<<< HEAD
 
 });
 
@@ -35,3 +52,5 @@ $(document).ready(function() {
     // curl "https://api.edamam.com/search?q=chicken&app_id=$"+edamAppID+"&app_key=$"+edamAppKey+"&from=0&to=3&calories=gte%20591,%20lte%20722&health=alcohol-free";
 
   
+=======
+>>>>>>> 2285fc006e270b647d06ecb78bd44cc4cefe3524
