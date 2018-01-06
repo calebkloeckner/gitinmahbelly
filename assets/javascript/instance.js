@@ -1,20 +1,67 @@
-window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '1496577137108254',
-      cookie     : true,
-      xfbml      : true,
-      version    : 'v2.11'
-    });
-      
-    FB.AppEvents.logPageView();   
+// const auth = firebase.auth();
+
+// auth.signInWithEmailAndPassword(email,pass);
+
+// auth.createUserWithEmailAndPassword(email, pass);
+
+// auth.onAuthStateChanged(firebaseUser =>{});
+
+(function(){
+
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyB18wvzow75U6zmE__jK4znPUgqMWTr8KM",
+      authDomain: "gitinmahbelly-c20b8.firebaseapp.com",
+      databaseURL: "https://gitinmahbelly-c20b8.firebaseio.com",
+      projectId: "gitinmahbelly-c20b8",
+      storageBucket: "gitinmahbelly-c20b8.appspot.com",
+      messagingSenderId: "862051069450"
     };
-    
+    firebase.initializeApp(config);
+// get elements
+    const txtEmail = document.getElementById('txtEmail');
+    const txtPassword = document.getElementById('txtPassword');
+    const btnLogin = document.getElementById('btnLogin');
+    const btnSignUp = document.getElementById('btnSignUp');
+    const btnLogout = document.getElementById('btnLogout');
+// add login event
+    btnLogin.addEventListener('click', e => {
+      // get email and pass
+      const email = txtEmail.value;
+      const pass = txtPassword.value;
+      const auth = firebase.auth();
+      // sign in
+      const promise = auth.signInWithEmailAndPassword(email, pass);
+      promise.catch(e => console.log(e.message));
+    });
 
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "https://connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
+    // add sign up event
 
-   }(document, 'script', 'facebook-jssdk'));
+    btnSignUp.addEventListener('click',e => {
+       // get email and pass
+       const email = txtEmail.value;
+       const pass = txtPassword.value;
+       const auth = firebase.auth();
+       // sign in
+       const promise = auth.createUserWithEmailAndPassword(email, pass);
+       promise.catch(e => console.log(e.message));
+
+    });
+
+    btnLogout.addEventListener('click', e => {
+      firebase.auth().signOut();
+    })
+
+    // add realtime listener
+    firebase.auth().onAuthStateChanged(firebaseUser =>{
+      if(firebaseUser) {
+        console.log(firebaseUser);
+        btnLogout.classList.remove('hide');
+      } else {
+        console.log('not logged in');
+        btnLogout.classList.add('hide');
+
+      }
+    });
+}());
+
