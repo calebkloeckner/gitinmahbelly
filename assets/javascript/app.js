@@ -9,33 +9,52 @@ const edamAppKey = "cdded1f6d7a29716aec7adcec57b419e";
 
 
 $(document).ready(function() {
-<<<<<<< HEAD
-    var edamIng = 'Margarita';  //Spaces need to be translated to %20. required  
-=======
-    var edamIng = 'chicken';  //Spaces need to be translated to %20. required  
->>>>>>> 2285fc006e270b647d06ecb78bd44cc4cefe3524
+    var edamIng = 'chicken';  //Spaces need to be translated to %20. required 
     var edamURL = 'https://api.edamam.com/search?q='+edamIng+'&app_id='+edamAppID+'&app_key='+edamAppKey;
+    $('form').submit(function(e){
+      e.preventDefault();
+      var button = $('<button>');
+      var text1 = $('#search').val();
+      var edamIng = text1;
+      button.text(text1);
+      $('.placeholder').append(button)
+      $('#search').val(null);
+    })
     $.ajax({
       url: edamURL,
       method: 'GET'
     }).done(function(response) {
+      var ingLoop = response.hits[0].recipe.ingredients;
       console.log(response)
+      console.log(response.hits[0].recipe.image)
+      console.log(response.hits[0].recipe.label)
+      for (i = 0; i < ingLoop.length; i++) {
+      console.log(ingLoop[i].text)}
+      console.log(response.hits[0].recipe.source)
+      console.log(response.hits[0].recipe.url)
+      console.log(response.hits[0].recipe.yield)
+
     });
 
-<<<<<<< HEAD
-    
-    // var imdataProduct = "product_identifier=014100044208";
-=======
     $.ajax({
         url: edamURL,
         method: 'GET'
       }).done(function(response) {
-        console.log(response.hits[0].recipe)
+        // console.log(response.hits[0].recipe)
       });
+
+      $.ajax({
+        url: edamURL,
+        method: 'GET'
+      }).done(function(response) {
+
+      });  
 });
 
+
+
+
    // var imdataProduct = "product_identifier=014100044208";
->>>>>>> 2285fc006e270b647d06ecb78bd44cc4cefe3524
     // var imURL = "https://www.iamdata.co/v1/products?"+imdataProduct+"&page=1&per_page=10&full_resp=false&client_id=" + imdataKey + "&client_secret=" + imdataSKey;
     // $.ajax({
     //   url: imURL,
@@ -44,13 +63,3 @@ $(document).ready(function() {
     //   console.log(response)
     // });
 
-<<<<<<< HEAD
-
-});
-
-
-    // curl "https://api.edamam.com/search?q=chicken&app_id=$"+edamAppID+"&app_key=$"+edamAppKey+"&from=0&to=3&calories=gte%20591,%20lte%20722&health=alcohol-free";
-
-  
-=======
->>>>>>> 2285fc006e270b647d06ecb78bd44cc4cefe3524
