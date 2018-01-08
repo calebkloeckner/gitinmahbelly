@@ -47,8 +47,7 @@ $(document).ready(function() {
         url: edamURL,
         method: 'GET'
       }).done(function(response) {
-
-      });  
+ });  
 });
 
 
