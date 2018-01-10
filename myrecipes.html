@@ -4,7 +4,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>COOKIN | My Recipes</title>
+  <title>COOKIN | Home</title>
   <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,400i,600" rel="stylesheet">
@@ -12,110 +12,120 @@
   <link href="assets/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <!-- Font Awesome -->
   <script src="https://use.fontawesome.com/70d78677ed.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.8.1/firebase-auth.js"></script>
 </head>
 
 <body>
 
 <!-- HEADER  -->
-  <div id="index-banner" class="parallax-container">
-    <div class="section no-pad-bot">
-      <div class="container">
-        <br><br>
+<div id="index-banner" class="parallax-container">
+  <div class="section no-pad-bot"> 
+    <div class="parallax"><img src="images/headerimg-01.png" alt="Unsplashed background img 1"></div>
+      <!-- LOGIN -->
+      <div class="row" >
+          <div class="col s0 m0 l9"></div>
+          <div class="col s12 m12 l3 right">
+            <span class="flow-text"> <input id="txtEmail" type="email" placeholder="Email">
+            <input id="txtPassword" type="password" placeholder="Password">
+            <button id="btnLogin" class="btn btn-secondary">Login</button>
+            <button id="btnSignUp" class="btn btn-secondary">Sign Up</button>
+            <button id="btnLogout" class="btn btn-secondary">Logout</button></span>
+        </div>
+      </div>
+    </div>
+  
+    <!-- HEADER TEXT -->
+    <div class="container" id="header-text">
+      <div class="col s12 m4 l2"></div>
+      <div class="col s12 m4 l8">
         <h5 class="header center header1">GET</h5>
         <h1 class="header center header2">COOKIN</h1>
         <h5 class="header center header1">GOOD LOOKIN</h5>
       </div>
-    </div>
-    <div class="parallax"><img src="images/headerimg-01.png" alt="Unsplashed background img 1"></div>
-   
-<!-- NAVIGATION -->
-  <nav class="white" role="navigation" id="top-nav">
-
-    <div class="nav-links">
-      <ul class="center">
-        <li><a href="index.html" class="top-nav-links">Home</a></li>
-        <li><a href="about.html" class="top-nav-links">About</a></li>
-        <li><a href="myrecipes.html" class="top-nav-links">My Recipes</a></li>
-        <li><a href="#" class="top-nav-links">Login</a></li>
-      </ul>
-<!-- NAV MOBILE -->
-      <ul id="nav-mobile" class="side-nav">
-        <li><a href="#">Navbar Link</a></li>
-      </ul>
-      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
-    </div>
-  </nav>
-  </div>
+      <div class="col s12 m4 l2"></div>
+  
+      <div class="row">
+          <div class="col s12 m3 l2"></div>
+          <div class="col s12 m6 l8">
+              <nav class="white center-align" role="navigation" id="top-nav">
+                  <div class="nav-links center-align">
+                    <ul class="center">
+                      <li><a href="index.html" class="top-nav-links">Home</a></li>
+                      <li><a href="about.html" class="top-nav-links">About</a></li>
+                      <li><a href="myrecipes.html" class="top-nav-links">My Recipes</a></li>
+                    </ul>
+                  </div>
+                  </nav>
+                </div>
+          <div class="col s12 m3 l2"></div>
+        </div>
+        </div>
+      </div>
+    
 
 <!-- SECTION TWO -->
-  <div class="container">
-    <div class="section">
-      <div class="row">
+<div class="container">
+    <div class="row">
         <div class="col s12" id="section2-about">
             <h5 class="center">My Recipes</h5>
-            <section class="my-recipes">
-                SAVED RECIPES GO HERE
-            </section>
+            <section class="my-recipes">SAVED RECIPES GO HERE</section>
             <h5 class="center">My Ingredients</h5>         
-            <section class="my-ingredients">
-                    INGREDIENTS GO HERE
-                </section>    
-            </div>
+            <section class="my-ingredients">INGREDIENTS GO HERE</section>
         </div>
-    </div>  
-</div>
+    </div>
+</div>  
 
-
-<!-- FOOTER -->
-<footer class="page-footer">
+  <!-- FOOTER -->
+  <footer class="page-footer">
     <div class="container">
-        <div class="row">
-        <div class="col l3 s12">
-            <p class="footer-title">Follow</p>
-            <p class="grey-text text-lighten-4">
-                <span class="fa-stack fa-lg"><i class="fa fa-twitter fa-stack-1x"></i></span>
-                <span class="fa-stack fa-lg"><i class="fa fa-facebook fa-stack-1x"></i></span>
-                <span class="fa-stack fa-lg"><i class="fa fa-instagram fa-stack-1x"></i></span>
-            </p>
+      <div class="row">
+        <div class="col l3 m6 s12">
+          <p class="footer-title">Follow</p>
+          <p class="grey-text text-lighten-4">
+              <span class="fa-stack fa-lg"><i class="fa fa-twitter fa-stack-1x"></i></span>
+              <span class="fa-stack fa-lg"><i class="fa fa-facebook fa-stack-1x"></i></span>
+              <span class="fa-stack fa-lg"><i class="fa fa-instagram fa-stack-1x"></i></span>
+          </p>
         </div>
-        <div class="col l3 s12">
+        <div class="col l3 m6 s12">
             <p class="footer-title">Contact</p>
             <ul>
-            <li>hi@belly.com</li>
-
-            </ul>
+              <li>hi@belly.com</li>
+          </ul>
         </div>
-        <div class="col l3 s12">
+        <div class="col l3 m6 s12">
             <p class="footer-title">Support</p>
             <ul>
             <li>FAQ</li>
             <li>Help Desk</li>
             <li>Status</li>
-            </ul>
+          </ul>
         </div>
 
-        <div class="col l3 s12">
+        <div class="col l3 m6 s12">
             <p class="footer-title">Account</p>
             <ul>
             <li>Login</li>
             <li>Logout</li>
             <li><a class="white-text" href="myrecipes.html">My Account</a></li>
-            </ul>
+          </ul>
         </div>
-        </div>
+      </div>
     </div>
     <div class="footer-copyright">
-        <div class="container">
+      <div class="container">
         Copyright 2018
-        </div>
+      </div>
     </div>
-    </footer>
+  </footer>
 
 
   <!--  Scripts-->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="js/materialize.js"></script>
   <script src="js/init.js"></script>
-
+  <script src="assets/javascript/instance.js"></script>
   </body>
 </html>
+

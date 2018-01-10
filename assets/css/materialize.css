@@ -3398,6 +3398,7 @@ nav ul a span.badge {
 
 .section.no-pad-bot {
   padding-bottom: 0;
+  padding-top: 0;
 }
 
 .section.no-pad-top {
@@ -4363,7 +4364,7 @@ nav ul a.btn > .material-icons, nav ul a.btn-large > .material-icons, nav ul a.b
 }
 
 nav ul a:hover {
-  background-color: rgba(0, 0, 0, 0.1);
+  text-decoration: underline;
 }
 
 nav ul.left {
@@ -5217,16 +5218,17 @@ small {
 .btn, .btn-large {
   text-decoration: none;
   color: #fff;
-  background-color: #26a69a;
+  background-color: #b8bc84;
   text-align: center;
   letter-spacing: .5px;
   -webkit-transition: .2s ease-out;
   transition: .2s ease-out;
   cursor: pointer;
+  font-size: 10pt;
 }
 
 .btn:hover, .btn-large:hover {
-  background-color: #2bbbad;
+  background-color: #333329;
 }
 
 .btn-floating {
