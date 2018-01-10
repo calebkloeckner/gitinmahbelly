@@ -214,3 +214,11 @@ h6 {
 .searched-ingredients {
   font-size: 14pt; 
 }
+
+/* Calebs addition */
+
+.food {
+    width: 300px;
+    height: 300px;
+    margin: .5%;
+}
