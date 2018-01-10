@@ -14,9 +14,8 @@
   <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase-auth.js"></script>
 </head>
-
+  
 <body>
-
 <!-- HEADER  -->
 <div id="index-banner" class="parallax-container">
   <div class="section no-pad-bot"> 
@@ -69,6 +68,7 @@
         <div class="col s12" id="section2">
             <h5 class="center">Using the ingredients <br/>you have at home...</h5>
             <h6 class="center" style="padding-bottom: 5%;">Become the next <br/>Master Chef!</h6>
+
         </div>
         <!-- SEARCH BAR -->
         <div class="col s12">
@@ -76,6 +76,8 @@
               <input type="text" id="search-bar" placeholder="What ingredients do you have?">
                 <a href="#"><img class="search-icon" src="http://www.endlessicons.com/wp-content/uploads/2012/12/search-icon.png"></a>
               </form>
+
+   
         </div>
 
         </div>
@@ -85,14 +87,24 @@
             </div>
 
 <!-- RECIPES DISLPLAYED HERE -->
-
 <div class="recipes valign-wrapper">
   <div class="container">
     <div class="col s12">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos quia, at reprehenderit rem hic quam fugit voluptates commodi, quo possimus vel dolor perferendis earum omnis nulla beatae, ex ad cupiditate eaque ipsa obcaecati quibusdam repudiandae maxime iusto. Esse qui modi vitae eaque, natus maiores facilis sit ab debitis illo laboriosam!
+    <div style="text-align: center;" id="top-recipes"></div><!-- Modal Trigger -->
+            
+
+            <!-- Modal Structure -->
+            <div id="modal1" class="modal">
+                <div class="modal-content">
+                    <a href=""><span id=""></span></a>
+                </div>
+                <div class="modal-footer">
+                    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+                </div>
+            </div>
     </div>
   </div>
 </div>
-
   <!-- FOOTER -->
   <footer class="page-footer">
     <div class="container">
@@ -143,4 +155,6 @@
   <script src="js/materialize.js"></script>
   <script src="js/init.js"></script>
   <script src="assets/javascript/instance.js"></script>
-  </body>
+  <script src="assets/javascript/app.js"></script>
+  <!-- <script src="assets/javascript/logic.js"></script> -->
+</body>
