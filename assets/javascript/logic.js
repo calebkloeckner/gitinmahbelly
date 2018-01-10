@@ -5,17 +5,7 @@ function topRecipes() {
     $("#top-recipes").empty();
     for (var i = 0; i < recipes.length; i++) {
         console.log(recipes[i]);
-        var custAttr = "id-"+i;
-        console.log(custAttr);
-        $("#top-recipes").prepend(`<button class='food ${custAttr}'  data-button='${JSON.stringify(recipes[i])}' data-id='${i}' ><img class='food ${custAttr}' src='${recipes[i].image}'></button>`);
-        var isOdd = function(x) { return x & 1; };
-        console.log(isOdd(i));
-        if (isOdd(i) === 1){
-        $('.'+custAttr).css("height", "175px");
-        $('.'+custAttr).css("width", "250px");
-        };
-        
-
+        $("#top-recipes").prepend(`<button class="food" data-button='${JSON.stringify(recipes[i])}' data-id="${i}"><img src="${recipes[i].image}"></button>`);
         // console.log(recipes[i]);
 
         // $("#top-recipes").attr("open", recipes[i]);
