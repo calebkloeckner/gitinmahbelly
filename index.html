@@ -2,68 +2,204 @@
 <html lang="en">
 
 <head>
-    <title>Cookin'</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="https://code.jquery.com/jquery.js"></script>
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-
-    <link rel="stylesheet" href="assets/css/style.css">
-
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>COOKIN | Home</title>
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,400i,600" rel="stylesheet">
+    <link href="assets/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="assets/css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <!-- Font Awesome -->
+    <script src="https://use.fontawesome.com/70d78677ed.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase-auth.js"></script>
 </head>
 
 <body>
-    <section>
-        <div class="top">
-            <h1>Cookin'</h1>
-            <nav class="nav-extended">
-                <div class="nav-content">
-                    <ul class="tabs tabs-transparent collapsible" data-collapsible="accordion">
-                        <li class="tab">
-                            <a href="#test1">Test 1</a>
-                        </li>
-                        <li class="tab">
-                            <a href="#test2">Test 2</a>
-                        </li>
-                        <li class="tab">
-                            <a href="#test2">Test 3</a>
-                        </li>
 
-                    </ul>
+    <!-- HEADER  -->
+    <div id="index-banner" class="parallax-container">
+        <div class="section no-pad-bot">
+            <!-- Login -->
+            <section class="nav-links-1 login">
+                <div class="container">
+                    <input id="txtEmail" type="email" placeholder="Email">
+
+                    <input id="txtPassword" type="password" placeholder="Password">
+
+                    <button id="btnLogin" class="btn btn-secondary">Login</button>
+
+                    <button id="btnSignUp" class="btn btn-secondary">Sign Up</button>
+
+                    <button id="btnLogout" class="btn btn-secondary">Logout</button>
                 </div>
-            </nav>
-        </div>
-    </section>
-    <section>
-        <div class="about-section">
+            </section>
 
+            <!-- Header Text -->
+            <div class="container">
+                <br>
+                <br>
+                <h5 class="header center header1">GET</h5>
+                <h1 class="header center header2">COOKIN</h1>
+                <h5 class="header center header1">GOOD LOOKIN</h5>
+            </div>
         </div>
-    </section>
-    <section>
-        <div id="top-recipes"></div>
-            <!-- Modal Trigger -->
-            
+        <!-- Header Image -->
+        <div class="parallax">
+            <img src="images/headerimg-01.png" alt="Unsplashed background img 1">
+        </div>
 
+        <!-- NAVIGATION -->
+        <nav class="white" role="navigation" id="top-nav">
+
+            <div class="nav-links">
+                <ul class="center">
+                    <li>
+                        <a href="index.html" class="top-nav-links">Home</a>
+                    </li>
+                    <li>
+                        <a href="about.html" class="top-nav-links">About</a>
+                    </li>
+                    <li>
+                        <a href="myrecipes.html" class="top-nav-links">My Recipes</a>
+                    </li>
+                    <li>
+                        <a href="#" class="top-nav-links">LOGIN</a>
+                    </li>
+                </ul>
+
+                <!-- NAV MOBILE -->
+                <ul id="nav-mobile" class="side-nav">
+                    <li>
+                        <a href="#">Navbar Link</a>
+                    </li>
+                </ul>
+                <a href="#" data-activates="nav-mobile" class="button-collapse">
+                    <i class="material-icons">menu</i>
+                </a>
+            </div>
+        </nav>
+    </div>
+
+    <!-- SECTION TWO -->
+    <section>
+        <div class="container">
+            <div class="section">
+                <div class="row">
+                    <div class="col s12" id="section2">
+                        <h5 class="center">Using the ingredients
+                            <br/>you have at home...</h5>
+                        <h6 class="center" style="padding-bottom: 5%;">Become the next
+                            <br/>Master Chef!</h6>
+                        <nav>
+
+                            <!-- Search Bar -->
+                            <section class="nav-wrapper center">
+                                <form>
+                                    <div class="input-field center" id="search-bar-width">
+                                        <input id="search" type="search" required>
+                                        <label class="label-icon" for="search">
+                                            <i class="material-icons">add</i>
+                                        </label>
+                                        <i class="material-icons">close</i>
+                                    </div>
+                                </form>
+
+                                <div class="searched-ingredients"></div>
+                            </section>
+                        </nav>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="row">
+            <div id="top-recipes" class="col s12 center-align teal"></div>
             <!-- Modal Structure -->
-            <div id="modal1" class="modal">
-                <div id="inside-modal"></div>
+            <div id="modal1" class="modal modal-fixed-footer">
                 <div class="modal-content">
-                    <a href=""><span id=""></span></a>
+                    <img src="#" id="recipe-image">
+                    <h4 id="recipe-name"></h4>
+                    <h5 id="recipe-body"></h5>
+                    <a href="#" target=_"blank" id="recipe-url">Link to the full recipe</a>
                 </div>
                 <div class="modal-footer">
                     <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
                 </div>
             </div>
+        </div>
     </section>
+    <!-- RECIPES DISLPLAYED HERE -->
+
+    <div class="recipes valign-wrapper">
+        <div class="container">
+            <div class="col s12">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos quia, at reprehenderit rem hic quam fugit voluptates
+                commodi, quo possimus vel dolor perferendis earum omnis nulla beatae, ex ad cupiditate eaque ipsa obcaecati
+                quibusdam repudiandae maxime iusto. Esse qui modi vitae eaque, natus maiores facilis sit ab debitis illo
+                laboriosam!
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="page-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col l3 s12">
+                    <p class="footer-title">Follow</p>
+                    <p class="grey-text text-lighten-4">
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-twitter fa-stack-1x"></i>
+                        </span>
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-facebook fa-stack-1x"></i>
+                        </span>
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-instagram fa-stack-1x"></i>
+                        </span>
+                    </p>
+                </div>
+                <div class="col l3 s12">
+                    <p class="footer-title">Contact</p>
+                    <ul>
+                        <li>hi@belly.com</li>
+
+                    </ul>
+                </div>
+                <div class="col l3 s12">
+                    <p class="footer-title">Support</p>
+                    <ul>
+                        <li>FAQ</li>
+                        <li>Help Desk</li>
+                        <li>Status</li>
+                    </ul>
+                </div>
+
+                <div class="col l3 s12">
+                    <p class="footer-title">Account</p>
+                    <ul>
+                        <li>Login</li>
+                        <li>Logout</li>
+                        <li>
+                            <a class="white-text" href="myrecipes.html">My Account</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                Copyright 2018
+            </div>
+        </div>
+    </footer>
 
 
-    <script src="assets/javascript/app.js"></script>
-    <script src="assets/javascript/logic.js"></script>
+    <!--  Scripts-->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="js/materialize.js"></script>
+    <script src="js/init.js"></script>
+    <script src="./assets/javascript/logic.js"></script>
+    <script src="assets/javascript/instance.js"></script>
 </body>
-
-
-</html>
