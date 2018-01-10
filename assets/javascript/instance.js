@@ -1,4 +1,3 @@
-
     (function(){
     
         // Initialize Firebase
@@ -55,7 +54,4 @@
             btnLogout.classList.add('hide');
     
           }
-        });
-    }());
-    
-    
+        });    }());
