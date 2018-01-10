@@ -1,5 +1,4 @@
 console.log("working");
-
 // $(toggle-class)
 function topRecipes() {
     console.log(recipes);
