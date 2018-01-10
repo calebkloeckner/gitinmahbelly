@@ -17,82 +17,74 @@
   
 <body>
 <!-- HEADER  -->
-  <div id="index-banner" class="parallax-container">
-    <div class="section no-pad-bot">
-      <!-- Login -->
-      <section class="nav-links-1 login">
-          <div class="container">
-              <input id="txtEmail" type="email" placeholder="Email">
-            
-              <input id="txtPassword" type="password" placeholder="Password">
-            
-              <button id="btnLogin" class="btn btn-secondary">Login</button>
-              
-              <button id="btnSignUp" class="btn btn-secondary">Sign Up</button>
-            
-              <button id="btnLogout" class="btn btn-secondary">Logout</button>
-            </div>
-        </section>
-            
-        <!-- Header Text -->
-      <div class="container">
-        <br><br>
+<div id="index-banner" class="parallax-container">
+  <div class="section no-pad-bot"> 
+    <div class="parallax"><img src="images/headerimg-01.png" alt="Unsplashed background img 1"></div>
+      <!-- LOGIN -->
+      <div class="row" >
+        <div class="col s0 m0 l9"></div>
+        <div class="col s12 m12 l3 right">
+            <span class="flow-text"> <input id="txtEmail" type="email" placeholder="Email">
+            <input id="txtPassword" type="password" placeholder="Password">
+            <button id="btnLogin" class="btn btn-secondary">Login</button>
+            <button id="btnSignUp" class="btn btn-secondary">Sign Up</button>
+            <button id="btnLogout" class="btn btn-secondary">Logout</button></span>
+        </div>
+      </div>
+    </div>
+  
+    <!-- HEADER TEXT -->
+    <div class="container" id="header-text">
+      <div class="col s12 m4 l2"></div>
+      <div class="col s12 m4 l8">
         <h5 class="header center header1">GET</h5>
         <h1 class="header center header2">COOKIN</h1>
         <h5 class="header center header1">GOOD LOOKIN</h5>
       </div>
-    </div>
-    <!-- Header Image -->
-    <div class="parallax"><img src="images/headerimg-01.png" alt="Unsplashed background img 1"></div>
-   
-<!-- NAVIGATION -->
-  <nav class="white" role="navigation" id="top-nav">
-
-    <div class="nav-links">
-      <ul class="center">
-        <li><a href="index.html" class="top-nav-links">Home</a></li>
-        <li><a href="about.html" class="top-nav-links">About</a></li>
-        <li><a href="myrecipes.html" class="top-nav-links">My Recipes</a></li>
-        <li><a href="#" class="top-nav-links">LOGIN</a></li>
-      </ul>
-
-<!-- NAV MOBILE -->
-      <ul id="nav-mobile" class="side-nav">
-        <li><a href="#">Navbar Link</a></li>
-      </ul>
-      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
-    </div>
-  </nav>
-  </div>
-
-<!-- SECTION TWO -->
-  <div class="container">
-    <div class="section">
+      <div class="col s12 m4 l2"></div>
+  
       <div class="row">
-        <div class="col s12" id="section2">
-            <h5 class="center">Using the ingredients <br/>you have at home...</h5>
-            <h6 class="center" style="padding-bottom: 5%;">Become the next <br/>Master Chef!</h6>
-            <nav>
-
-              <!-- Search Bar -->
-                <section class="nav-wrapper center">
-                  <form>
-                    <div class="input-field center" id="search-bar-width">
-                      <input id="search" type="search" required>
-                      <label class="label-icon" for="search"><i class="material-icons">add</i></label>
-                      <i class="material-icons">close</i>
-                    </div>
-                  </form>
-
-                  <div class="searched-ingredients"></div>
-                </section>
-              </nav>          
-            </div>
-            <div class="placeholder"><button class=search-button>Add as material icon</button></div>  // Add icon adjacent to close to enable search
+          <div class="col s12 m3 l2"></div>
+          <div class="col s12 m6 l8">
+              <nav class="white center-align" role="navigation" id="top-nav">
+                  <div class="nav-links center-align">
+                    <ul class="center">
+                      <li><a href="index.html" class="top-nav-links">Home</a></li>
+                      <li><a href="about.html" class="top-nav-links">About</a></li>
+                      <li><a href="myrecipes.html" class="top-nav-links">My Recipes</a></li>
+                    </ul>
+                  </div>
+                  </nav>
+                </div>
+          <div class="col s12 m3 l2"></div>
         </div>
-
         </div>
       </div>
+
+      <!-- SECTION TWO -->
+      <div class="container section">
+        <div class="row">
+          <div class="col s12" id="section2">
+              <h5 class="center">Using the ingredients <br/>you have at home...</h5>
+              <h6 class="center" style="padding-bottom: 5%;">Become the next <br/>Master Chef!</h6>
+      
+          </div>
+            <!-- SEARCH BAR -->
+            <div class="col s12">
+        <form class="search-container">
+          <input type="text" id="search-bar" placeholder="What ingredients do you have?">
+          <img class="search-icon search-button" src="http://www.endlessicons.com/wp-content/uploads/2012/12/search-icon.png">
+        </form>
+
+        <div class="searched-ingredients"></div>
+        <div class="placeholder"></div>
+            </div>
+        </div>
+      </div>
+
+
+           
+ 
 
 <!-- RECIPES DISLPLAYED HERE -->
 <!-- <div class="recipes valign-wrapper">
