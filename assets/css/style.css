@@ -243,9 +243,12 @@ input#search-bar{
 /* Calebs addition */
 
 .food {
-  width: 300px;
+  margin: .3%;
+  border: 0px;
+  padding: 0px;
+  margin: 0px;
+  width: 250px;
   height: 300px;
-  margin: .5%;
 }
 
 /* Dante addition
@@ -262,5 +265,4 @@ li {
   width: 250px;
   height: 150px;
   border: 0px solid;
-
 }
