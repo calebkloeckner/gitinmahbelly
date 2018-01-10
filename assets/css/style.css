@@ -8,31 +8,8 @@
 
 body {
   font-family: 'Raleway', sans-serif;
-  margin: 0%;
 
 }
-
-/* logic.js / app/js css
-*
-*/
-h1 {
-  margin: 0%;
-}
-
-li {
-  align-content: left;
-}
-
-.images {
-  width: 250px;
-  height: 150px;
-  border: 0px solid;
-
-}
-
-/* logic.js / app/js css
-*
-*/
 
 nav ul a,
 nav .brand-logo {
@@ -213,4 +190,29 @@ h6 {
 
 .searched-ingredients {
   font-size: 14pt; 
+}
+
+/* Calebs addition */
+
+.food {
+  width: 300px;
+  height: 300px;
+  margin: .5%;
+}
+
+/* Dante addition
+*/
+h1 {
+  margin: 0%;
+}
+
+li {
+  align-content: left;
+}
+
+.images {
+  width: 250px;
+  height: 150px;
+  border: 0px solid;
+
 }
