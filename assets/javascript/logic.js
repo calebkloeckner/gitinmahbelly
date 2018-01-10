@@ -34,7 +34,7 @@ $(document).ready(function () {
             buttonV.attr('class', 'ingredient-button');
             buttonV.attr('type', 'button');
             buttonV.attr('data', text1);
-            $('.placeholder').append(buttonV)
+            $('.searched-ingredients').append(buttonV)
             $('#search-bar').val(null);
             console.log(edamIng);
           });
