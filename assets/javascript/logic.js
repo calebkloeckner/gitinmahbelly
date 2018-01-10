@@ -44,7 +44,6 @@ $(document).ready(function () {
             buttonV.attr('id', `ing-${text1}`);
             buttonV.attr('data-button', text1);
             edamIng.push(text1);
-            console.log(edamIng);
           });
 
           $(document).on('click', ".ingredient-button", function () {
@@ -56,7 +55,13 @@ $(document).ready(function () {
             edamIng.splice(indexInArrayToRemove, 1);
           });
           $('.search-button').on('click', function () {
-            var edamURL = 'https://api.edamam.com/search?q='+edamIng+'&app_id='+edamAppID+'&app_key='+edamAppKey;
+            
+            for (let i = 0; i < edamIng.length; i++) {
+            edamIng = edamIng.toString().replace(",", "%20");
+            console.log(edamIng);
+            console.log("---");
+        };
+        var edamURL = 'https://api.edamam.com/search?q='+edamIng+'&app_id='+edamAppID+'&app_key='+edamAppKey;
             console.log("search executing");
             console.log(edamIng);
             console.log(edamURL);
@@ -64,13 +69,24 @@ $(document).ready(function () {
                 url: edamURL,
                 method: 'GET'
             }).done(function (response) {
-                for (let i = 0; i < 8; i++) {
+                console.log(response);
+                if (response.count >=8) {
+                  for (let i = 0; i < 8; i++) 
                     recipes.push({
                         title: response.hits[i].recipe.label,
                         ingredients: response.hits[i].recipe.ingredientLines,
                         image: response.hits[i].recipe.image,
                         link: response.hits[i].recipe.url
-                    });
+                    })}
+                else {
+                    for (let i = 0; i < response.count; i++) {
+                        recipes.push({
+                            title: response.hits[i].recipe.label,
+                            ingredients: response.hits[i].recipe.ingredientLines,
+                            image: response.hits[i].recipe.image,
+                            link: response.hits[i].recipe.url
+                        })
+                };
                     // console.log(response.hits[i].recipe.image);
                 }
                 function topRecipes() {
