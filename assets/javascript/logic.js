@@ -20,10 +20,6 @@ $(document).ready(function () {
 
     topRecipes();
 
-    $('form').submit(function(e){
-        e.preventDefault();
-    });
-
     $.ajax({
       url: edamURL,
       method: 'GET'
@@ -31,7 +27,7 @@ $(document).ready(function () {
         edamIng=[];
         $('form').submit(function(e){
             var buttonV = $('<button>');
-            var text1 = $('#search').val();
+            var text1 = $('#search-bar').val();
             edamIng.push(text1);
             buttonV.text(text1);
             buttonV.attr('id', `ing-${text1}`);
@@ -39,7 +35,7 @@ $(document).ready(function () {
             buttonV.attr('type', 'button');
             buttonV.attr('data', text1);
             $('.placeholder').append(buttonV)
-            $('#search').val(null);
+            $('#search-bar').val(null);
             console.log(edamIng);
           });
 
