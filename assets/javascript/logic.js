@@ -26,29 +26,31 @@ $(document).ready(function () {
     }).done(function(response) {        
         edamIng=[];
         $('form').submit(function(e){
+            
             var buttonV = $('<button>');
             var text1 = $('#search-bar').val();
+            text1 = text1.trim();
+            if( text1.indexOf(" ") === true ){
+                text1 = str.replace(" ", "%20");
+            };
             edamIng.push(text1);
             buttonV.text(text1);
             buttonV.attr('id', `ing-${text1}`);
             buttonV.attr('class', 'ingredient-button');
             buttonV.attr('type', 'button');
-            buttonV.attr('data', text1);
-            $('.searched-ingredients').append(buttonV)
+            buttonV.attr('data-button', text1);
+            $('.searched-ingredients').append(buttonV);
             $('#search-bar').val(null);
             console.log(edamIng);
           });
 
-          $("ingredient-button").click(function(){
-            $("button").remove();
-            // var indexInArrayToRemove = edamIng.indexOf(this.attr("data"));
-            // console.log(indexInArrayToRemove);
-
-            // remove indexInArrayToRemove
-
-            // remove this jquery element from dom
-            // console.log(edamIng.indexOf(this.data));
-            console.log(edamIng);
+          $(document).on('click', ".ingredient-button", function () {
+            let removeAct = $(this).attr("data-button");
+            let removeActId = $(this).attr("id");
+            var indexInArrayToRemove = edamIng.indexOf($(this).attr("data-button"));
+            delete edamIng[indexInArrayToRemove];
+            $(this).remove(); 
+            edamIng.splice(indexInArrayToRemove, 1);
           });
           $('.search-button').on('click', function () {
             var edamURL = 'https://api.edamam.com/search?q='+edamIng+'&app_id='+edamAppID+'&app_key='+edamAppKey;
