@@ -49,17 +49,6 @@ p {
   padding-top: 20px;
 }
 
-/* .nav-links-1 {
-  margin: auto;
-  text-align: center;
-  display: inline-block;
-} */
-
-#login-form {
-  float: right;
-}
-
-
 .button-collapse {
   color: #353328;
 }
@@ -113,10 +102,10 @@ footer.page-footer {
   font-weight: bold;
 }
 
-.header1 {
+#header1 {
   font-family: 'Raleway', sans-serif;
   letter-spacing: 10pt;
-  size: 18pt;
+  size: 50pt;
   color: white;
 }
 
@@ -127,9 +116,8 @@ footer.page-footer {
   margin: 0;
 }
 
-h5 {
+h1 {
   text-transform: uppercase;
-  color: #333329;
   letter-spacing: 5pt;
   font-size: 24pt;
   text-align: center;
@@ -137,15 +125,36 @@ h5 {
   line-height: 50pt;
 }
 
-h6 {
+h2 {
   text-transform: uppercase;
   color: #b8bc84;
+  padding-bottom: 50px;
+  text-align: center;
+  font-weight: bold;
+}
+
+h3 {
+text-transform: uppercase;
+  color: white;
   letter-spacing: 5pt;
   font-size: 24pt;
   text-align: center;
   font-weight: bold;
   line-height: 50pt;
 }
+
+h4 {
+  text-transform: uppercase;
+  letter-spacing: 2;
+  font-weight: bold;
+}
+
+h5 {
+  font-family: Raleway;
+  font-size: 14pt;
+  line-height: 2;
+}
+
 
 
 #section2 {
