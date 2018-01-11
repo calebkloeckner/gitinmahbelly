@@ -1,5 +1,6 @@
 console.log("working");
 // $(toggle-class)
+let recipes = [];
 function topRecipes() {
     console.log(recipes);
     $("#top-recipes").empty();
