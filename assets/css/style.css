@@ -49,17 +49,6 @@ p {
   padding-top: 20px;
 }
 
-/* .nav-links-1 {
-  margin: auto;
-  text-align: center;
-  display: inline-block;
-} */
-
-#login-form {
-  float: right;
-}
-
-
 .button-collapse {
   color: #353328;
 }
@@ -113,10 +102,10 @@ footer.page-footer {
   font-weight: bold;
 }
 
-.header1 {
+#header1 {
   font-family: 'Raleway', sans-serif;
   letter-spacing: 10pt;
-  size: 18pt;
+  size: 50pt;
   color: white;
 }
 
@@ -127,9 +116,8 @@ footer.page-footer {
   margin: 0;
 }
 
-h5 {
+h1 {
   text-transform: uppercase;
-  color: #333329;
   letter-spacing: 5pt;
   font-size: 24pt;
   text-align: center;
@@ -137,15 +125,43 @@ h5 {
   line-height: 50pt;
 }
 
-h6 {
+h2 {
   text-transform: uppercase;
   color: #b8bc84;
+  padding-bottom: 50px;
+  text-align: center;
+  font-weight: bold;
+}
+
+h3 {
+text-transform: uppercase;
+  color: white;
   letter-spacing: 5pt;
   font-size: 24pt;
   text-align: center;
   font-weight: bold;
   line-height: 50pt;
 }
+
+h4 {
+  text-transform: uppercase;
+  letter-spacing: 2;
+  font-weight: bold;
+}
+
+h5 {
+  font-family: Raleway;
+  font-size: 14pt;
+  line-height: 2;
+}
+
+h6 {
+  text-transform: uppercase;
+  font-weight:bold;
+  font-size: 32pt;
+  text-align: center;
+}
+
 
 
 #section2 {
@@ -160,11 +176,7 @@ h6 {
 
 
 .recipes {
-  width: 70%;
   height: auto;
-  margin-left: 15%;
-  margin-right: 15%;
-  margin-top: 5%;
   margin-bottom: 5%;
   vertical-align: middle;
   padding:10px;
@@ -179,36 +191,28 @@ h6 {
   margin-right: 10%;
 }
 
-
-.my-ingredients {
-  border: 1px solid black;
-  padding: 20px;
-  width: 80%;
-  margin-left: 10%;
-  margin-right: 10%;
-  margin-bottom: 5%;
-}
-
 .searched-ingredients {
-  font-size: 14pt; 
+  font-size: 14pt;
+  margin: 0;  
 }
 
 .header-text {
   text-align:center;
+  margin: 0;
 }
-
 
 .search-container{
   width: 490px;
   display: block;
   margin: 0 auto;
+  padding: 0px;
 }
 
 input#search-bar{
   margin: 0 auto;
   width: 100%;
   height: 45px;
-  padding: 0 20px;
+  padding: 0 10px;
   font-size: 1rem;
   border: 1px solid #D0CFCE;
   outline: none;
@@ -218,15 +222,15 @@ input#search-bar{
     color: #008ABF;
     &::-webkit-input-placeholder{
       transition: opacity 0.45s ease; 
-  	  opacity: 0;
+      opacity: 0;
      }
     &::-moz-placeholder {
       transition: opacity 0.45s ease; 
-  	  opacity: 0;
+      opacity: 0;
      }
     &:-ms-placeholder {
      transition: opacity 0.45s ease; 
-  	 opacity: 0;
+     opacity: 0;
      }    
    }
  }
@@ -237,7 +241,7 @@ input#search-bar{
   width: 75px;
   height: 75px;
   top: -62px;
-  right: -45px;
+  right: -35px;
 }
 
 /* Calebs addition */
@@ -269,3 +273,4 @@ li {
   height: 150px;
   border: 0px solid;
 }
+

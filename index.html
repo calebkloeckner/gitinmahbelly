@@ -30,9 +30,9 @@
           <span class="flow-text">
             <input id="txtEmail" type="email" placeholder="Email">
             <input id="txtPassword" type="password" placeholder="Password">
-            <button id="btnLogin" class="btn btn-secondary">Login</button>
-            <button id="btnSignUp" class="btn btn-secondary">Sign Up</button>
-            <button id="btnLogout" class="btn btn-secondary">Logout</button>
+            <form id="btnLogin" class="btn btn-secondary">Login</form>
+            <form id="btnSignUp" class="btn btn-secondary">Sign Up</form>
+            <form id="btnLogout" class="btn btn-secondary">Logout</form>
           </span>
         </div>
       </div>
@@ -55,15 +55,9 @@
           <nav class="white center-align" role="navigation" id="top-nav">
             <div class="nav-links center-align">
               <ul class="center">
-                <li>
-                  <a href="index.html" class="top-nav-links">Home</a>
-                </li>
-                <li>
-                  <a href="about.html" class="top-nav-links">About</a>
-                </li>
-                <li>
-                  <a href="myrecipes.html" class="top-nav-links">My Recipes</a>
-                </li>
+                <li><a href="index.html" class="top-nav-links">Home</a></li>
+                <li><a href="about.html" class="top-nav-links">About</a></li>
+                <li><a href="myrecipes.html" class="top-nav-links">My Recipes</a></li>
               </ul>
             </div>
           </nav>
@@ -72,35 +66,41 @@
       </div>
     </div>
   </div>
+
   <!-- SECTION TWO -->
   <div class="container section">
     <div class="row">
       <div class="col s12" id="section2">
         <p class="center" style="text-transform: uppercase; color: #353328;letter-spacing: 5pt;font-size: 24pt; text-align: center; font-weight: bold; line-height: 50pt;">Using the ingredients<br/>you have at home...</p>
         <p class="center" style="text-transform: uppercase; color: #b8bc84;letter-spacing: 5pt;font-size: 24pt; text-align: center; font-weight: bold; line-height: 50pt; padding-bottom: 5%;">Become the next<br/>Master Chef!</p>
-      </div>
-      <!-- SEARCH BAR -->
-      <div class="col s12">
-        <form class="search-container">
-          <input type="text" id="search-bar" placeholder="What ingredients do you have?">
-          <img class="search-icon search-button" src="http://www.endlessicons.com/wp-content/uploads/2012/12/search-icon.png">
-        </form>
-      </div>
-      
-      <!-- SEARCHED INGREDIENTS BUTTONS -->
-      <div class="col s12">
-        <div class="searched-ingredients"></div>
-      </div>
-    </div>
-  </div>
 
-<!-- RECIPES DISLPLAYED HERE -->
-  <!-- <div class="recipes valign-wrapper">
-  <div class="container">
-    <div class="col s12">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos quia, at reprehenderit rem hic quam fugit voluptates commodi, quo possimus vel dolor perferendis earum omnis nulla beatae, ex ad cupiditate eaque ipsa obcaecati quibusdam repudiandae maxime iusto. Esse qui modi vitae eaque, natus maiores facilis sit ab debitis illo laboriosam!
+      </div>
     
+    <!-- SEARCH BAR -->
+  <div class="row">
+    <div class="col s12">
+      <form class="search-container" style="padding:0px;">
+        <input type="text" id="search-bar" placeholder="What ingredients do you have?">
+        <img class="search-icon search-button" src="http://www.endlessicons.com/wp-content/uploads/2012/12/search-icon.png">
+      </form>
+      </div>
+      <!-- SEARCHED INGREDIENTS BUTTONS -->
+        <div class="col l2 m2 s2"></div>
+        <div class="searched-ingredients center-align col l8 m8 s8" style="padding-bottom: 5%;"></div>
+        <div class="col l2 m2 s2"></div>
+      </div>
+
+    </div>
+ 
+
+  <div class="row">
+    <div class="l4 m4 s4"></div>
+    <div class="l4 m4 s4"><h6>TOP RECIPES</h6></div>
+    <div class="l4 m4 s4"></div>
   </div>
 </div> -->
+
+<!-- RECIPES DISPLAY -->
 <div class="row">
 <div class="col l2 m2 s12"></div>
   <div style="text-align: center;" id="top-recipes" class="recipes col l8 m8 s12"></div>
@@ -112,7 +112,6 @@
       <h4 id="recipe-name"></h4>
       <h5 id="recipe-body"></h5>
       <a href="#" target="_blank" id="recipe-url">Link to the full recipe</a>
-
     </div>
     <div class="modal-footer">
       <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
@@ -161,9 +160,7 @@
           <ul>
             <li>Login</li>
             <li>Logout</li>
-            <li>
-              <a class="white-text" href="myrecipes.html">My Account</a>
-            </li>
+            <li><a class="white-text" href="myrecipes.html">My Account</a></li>
           </ul>
         </div>
 
