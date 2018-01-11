@@ -123,34 +123,36 @@ $(document).ready(function () {
     //   console.log(response.hits[0].recipe.yield)
     //   console.log(testResponse)
     });
-
+    // modal display
     $('.modal').modal();
-    
+    // on click function to open the modal
     $(document).on('click', ".food", function () {
-        let clicky = $(this).attr("data-button");
+        let clicky = JSON.parse($(this).attr("data-button"));
         let clickedId = $(this).attr("data-id");
         console.log(clicky);
         $('#modal1').modal('open');
-        // $("#inside-modal").append(clicky);
+        // displays the object insie the modal
         let recipeTitle = recipes[clickedId].title;
         let recipeBody = recipes[clickedId].ingredients;
         let recipeImage = recipes[clickedId].image;
         let recipeUrl = recipes[clickedId].link;
+       
         console.log(recipeTitle);
-
+        console.log(clicky.ingredients);
+        // for loop to add each ingredient to its own line with a <p> tag
+        let i;
+        for (i = 0; i < clicky.ingredients.length; i++) {
+            let item = $('<p>').html(clicky.ingredients[i]);
+            $("#recipe-body").append(item);
+        }
         $("#recipe-name").html(recipeTitle);
-        $("#recipe-body").html(recipeBody);
+        // $("#recipe-body").attr(recipeBody); this was the old way. Don't think its needed
         $("#recipe-image").attr("src", recipeImage);
         $("#recipe-url").attr("href", recipeUrl);
         console.log(recipeUrl);
-
-
         console.log("boogers");
-
-
     });
-    // $(".modal-content").empty();
-   
+      
     $.ajax({
         url: edamURL,
         method: 'GET'

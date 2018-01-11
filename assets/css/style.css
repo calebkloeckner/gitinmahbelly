@@ -254,6 +254,9 @@ input#search-bar{
   width: 250px;
   height: 300px;
 }
+#recipe-body {
+  font-size: 10px;
+}
 
 /* Dante addition
 */
