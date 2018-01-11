@@ -3,7 +3,7 @@
  * Copyright 2014-2017 Materialize
  * MIT License (https://raw.githubusercontent.com/Dogfalo/materialize/master/LICENSE)
  */
-.materialize-red {
+ .materialize-red {
   background-color: #e51c23 !important;
 }
 
@@ -2394,7 +2394,15 @@ button {
  */
 button,
 select {
-  text-transform: none;
+  text-transform: uppercase;
+  padding: 10px;
+  color: #f3f3ea;
+  background-color: #353328;
+  border: 1px solid #a24622;
+  border-radius: 5px;
+  letter-spacing: 2;
+  margin: 2;
+
 }
 
 /**
