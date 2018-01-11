@@ -160,14 +160,11 @@ h6 {
 
 
 .recipes {
-  width: 70%;
   height: auto;
-  margin-left: 15%;
-  margin-right: 15%;
-  margin-top: 5%;
   margin-bottom: 5%;
   vertical-align: middle;
   padding:10px;
+  border: 1px black solid;
 }
 
 
@@ -190,7 +187,8 @@ h6 {
 }
 
 .searched-ingredients {
-  font-size: 14pt; 
+  font-size: 14pt;
+  margin: 5px;
 }
 
 .header-text {
@@ -218,15 +216,15 @@ input#search-bar{
     color: #008ABF;
     &::-webkit-input-placeholder{
       transition: opacity 0.45s ease; 
-  	  opacity: 0;
+      opacity: 0;
      }
     &::-moz-placeholder {
       transition: opacity 0.45s ease; 
-  	  opacity: 0;
+      opacity: 0;
      }
     &:-ms-placeholder {
      transition: opacity 0.45s ease; 
-  	 opacity: 0;
+     opacity: 0;
      }    
    }
  }
@@ -266,3 +264,4 @@ li {
   height: 150px;
   border: 0px solid;
 }
+
