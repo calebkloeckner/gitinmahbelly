@@ -160,14 +160,11 @@ h6 {
 
 
 .recipes {
-  width: 70%;
   height: auto;
-  margin-left: 15%;
-  margin-right: 15%;
-  margin-top: 5%;
   margin-bottom: 5%;
   vertical-align: middle;
   padding:10px;
+  border: 1px black solid;
 }
 
 
@@ -190,7 +187,8 @@ h6 {
 }
 
 .searched-ingredients {
-  font-size: 14pt; 
+  font-size: 14pt;
+  margin: 5px;
 }
 
 .header-text {
