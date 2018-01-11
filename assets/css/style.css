@@ -155,6 +155,13 @@ h5 {
   line-height: 2;
 }
 
+h6 {
+  text-transform: uppercase;
+  font-weight:bold;
+  font-size: 32pt;
+  text-align: center;
+}
+
 
 
 #section2 {
@@ -173,7 +180,6 @@ h5 {
   margin-bottom: 5%;
   vertical-align: middle;
   padding:10px;
-  border: 1px black solid;
 }
 
 
@@ -185,37 +191,28 @@ h5 {
   margin-right: 10%;
 }
 
-
-.my-ingredients {
-  border: 1px solid black;
-  padding: 20px;
-  width: 80%;
-  margin-left: 10%;
-  margin-right: 10%;
-  margin-bottom: 5%;
-}
-
 .searched-ingredients {
   font-size: 14pt;
-  margin: 5px;
+  margin: 0;  
 }
 
 .header-text {
   text-align:center;
+  margin: 0;
 }
-
 
 .search-container{
   width: 490px;
   display: block;
   margin: 0 auto;
+  padding: 0px;
 }
 
 input#search-bar{
   margin: 0 auto;
   width: 100%;
   height: 45px;
-  padding: 0 20px;
+  padding: 0 10px;
   font-size: 1rem;
   border: 1px solid #D0CFCE;
   outline: none;
@@ -244,7 +241,7 @@ input#search-bar{
   width: 75px;
   height: 75px;
   top: -62px;
-  right: -45px;
+  right: -35px;
 }
 
 /* Calebs addition */
