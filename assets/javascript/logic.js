@@ -189,7 +189,7 @@ console.log(recipes[i].image)
         // <div class="content-overlay">
 
         // $("#recipe-body").attr(recipeBody); this was the old way. Don't think its needed
-        $("#recipe-image").attr("src", recipeImage);
+        // $("#recipe-image").attr("src", recipeImage);
         $("#recipe-url").attr("href", recipeUrl);
         console.log(recipeUrl);
         console.log("boogers");
