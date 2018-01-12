@@ -195,10 +195,14 @@ h6 {
 .searched-ingredients {
   font-size: 14pt;
 <<<<<<< HEAD
+<<<<<<< HEAD
   margin: 5px;
 =======
   margin: 0;  
 >>>>>>> 1da2ccae364321b6a48a4b280b1269796d7d4e88
+=======
+  margin: 5px;
+>>>>>>> 663798eed5592472567fc56212e9bdd66e7a9f01
 }
 
 .header-text {
@@ -260,9 +264,13 @@ input#search-bar{
   height: 300px;
 }
 #recipe-body {
-  font-size: 10px;
+  font-size: inherit;
 }
 
+#recipe-image{
+  border-radius: 8px;
+  float: right;
+}
 /* Dante addition
 */
 h1 {
@@ -272,10 +280,3 @@ h1 {
 li {
   align-content: left;
 }
-
-.images {
-  width: 250px;
-  height: 150px;
-  border: 0px solid;
-}
-

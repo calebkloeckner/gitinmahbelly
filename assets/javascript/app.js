@@ -1,3 +1,7 @@
+function getRandomInt(max) {
+    return Math.floor(Math.random() * Math.floor(max));
+  }
+
 const gifkey = "JFlbvY7o0WgDcLH8D9vc7jlFL5hMW2Dl";
 const imdataKey = "c6TNwjpz";
 const imdataSKey = "J8adbvz3Bs5KLJ2nTeFRXSAwKNUanpar";
@@ -8,12 +12,10 @@ const edamAppID = "c1724022";
 const edamAppKey = "cdded1f6d7a29716aec7adcec57b419e";
 
 var edamIng = [];  //Spaces need to be translated to %20. required 
-edamIng.push('chicken');
+var edamIngRandom = ['beef', 'pork', 'chicken', 'ramen', 'apple%20cherry', 'milk%20corn', 'curry']
+edamIng.push(edamIngRandom[getRandomInt(edamIngRandom.length)]);
 var edamURL = 'https://api.edamam.com/search?q='+edamIng+'&app_id='+edamAppID+'&app_key='+edamAppKey;
 
-function getRandomInt(max) {
-  return Math.floor(Math.random() * Math.floor(max));
-}
 var testResponse = {};
 
 let recipes = [];

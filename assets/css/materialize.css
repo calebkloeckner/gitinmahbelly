@@ -363,10 +363,6 @@ button {
  */
 button,
 select {
-<<<<<<< HEAD
-  text-transform: uppercase;
-  padding: 10px;
-=======
   padding: 8px 8px 8px 32px;
   font-family: Arial, Verdana;   
   background: #f0f0f0 url(http://streetsandstripes.com/wp-content/uploads/2018/01/exit-01.png);
@@ -374,18 +370,13 @@ select {
   background-repeat: no-repeat;
   text-transform: uppercase;
   padding: 10px 20px 10px 10px;
->>>>>>> 1da2ccae364321b6a48a4b280b1269796d7d4e88
   color: #f3f3ea;
   background-color: #353328;
   border: 1px solid #a24622;
   border-radius: 5px;
   letter-spacing: 2;
-<<<<<<< HEAD
   margin: 2;
 
-=======
-  margin: 5pt;
->>>>>>> 1da2ccae364321b6a48a4b280b1269796d7d4e88
 }
 
 /**
