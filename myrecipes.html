@@ -4,7 +4,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>COOKIN | Home</title>
+  <title>COOKIN | My Recipes</title>
   <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,400i,600" rel="stylesheet">
@@ -15,75 +15,71 @@
   <!-- auth0  -->
     <!-- Latest patch release (recommended for production) -->
     <script src="https://cdn.auth0.com/js/auth0/9.0.1/auth0.min.js"></script>
+<!-- current firebase -->
+  <script src="https://www.gstatic.com/firebasejs/4.8.2/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.8.2/firebase-auth.js"></script>
 </head>
 
 <body>
   <!-- HEADER  -->
-  <div id="index-banner" class="parallax-container">
-    <div class="section no-pad-bot">
+  <div class="parallax-container">
+    <div class="section">
       <div class="parallax">
         <img src="images/headerimg-01.png" alt="Unsplashed background img 1">
       </div>
-      <!-- LOGIN -->
-      <div class="row">
-        <div class="col s0 m0 l9"></div>
-        <div class="col s12 m12 l3 right">
-          <span class="flow-text">
-            <input id="txtEmail" type="email" placeholder="Email">
-            <input id="txtPassword" type="password" placeholder="Password">
-            <form id="btnLogin" class="btn btn-secondary">Login</form>
-            <form id="btnSignUp" class="btn btn-secondary">Sign Up</form>
-            <form id="btnLogout" class="btn btn-secondary">Logout</form>
-          </span>
-        </div>
-      </div>
-    </div>
 
-    <!-- HEADER TEXT -->
-    <div class="container" id="header-text">
-      <div class="col s12 m4 l2"></div>
-      <div class="col s12 m4 l8">
-        <h3 class="header center header1" style="padding-bottom: 2%;">GET</h3>
-        <h1 class="header center header2">COOKIN</h1>
-        <h3 class="header center header1" style="padding-top: 2%;">GOOD LOOKIN</h3>
-      </div>
-
-      <div class="col s12 m4 l2"></div>
- 
-      <div class="row">
-        <div class="col s12 m3 l2"></div>
-        <div class="col s12 m6 l8">
-          <nav class="white center-align" role="navigation" id="top-nav">
-            <div class="nav-links center-align">
-              <ul class="center">
-                <li><a href="index.html" class="top-nav-links">Home</a></li>
-                <li><a href="about.html" class="top-nav-links">About</a></li>
-                <li><a href="myrecipes.html" class="top-nav-links">My Recipes</a></li>
-              </ul>
-            </div>
-          </nav>
-        </div>
-        <div class="col s12 m3 l2"></div>
-      </div>
-    </div>
+  <!-- LOGIN -->
+  <div class="row">
+    <div class="col s12 right-align">
+      <span class="flow-text">
+        <form id="btnLogin" class="btn btn-secondary">Login</form>
+        <form id="btnLogout" class="btn btn-secondary">Logout</form>
+      </span>
   </div>
 
-  
-<!-- SECTION TWO -->
-<div class="container">
-    <div class="row">
-        <div class="col s12" id="section2-about">
-            <h5 class="center">My Recipes</h5>
-            <section class="my-recipes">SAVED RECIPES GO HERE</section>
+  <!-- HEADER TEXT -->
+  <div class="col s12 m2 l2"></div>
+    <div class="col s12 m8 l8">
+      <h3 class="header center header1" style="padding-bottom: 2%;">GET</h3>
+      <h1 class="header center header2">COOKIN</h1>
+      <h3 class="header center header1" style="padding-top: 2%;">GOOD LOOKIN</h3></div>
+    <div class="col s12 m2 l2"></div>
+  </div>
+      
+  <!-- NAVIGATION -->
+  <div class="row">
+    <div class="col s12 m2 l2"></div>
+    <div class="col s12 m8 l8">
+      <nav class="white center-align" role="navigation" id="top-nav">
+        <div class="nav-links center-align">
+          <ul class="center">
+            <li><a href="index.html" class="top-nav-links">Home</a></li>
+            <li><a href="about.html" class="top-nav-links">About</a></li>
+            <li><a href="myrecipes.html" class="top-nav-links">My Recipes</a></li>
+          </ul>
         </div>
+      </nav>
     </div>
-</div>  
+    <div class="col s12 m2 l2"></div>
+  </div>
+</div>
+</div>
 
+  <!-- SECTION TWO -->
+  <div class="container">
+      <div class="row">
+          <div class="col s12" id="section2-about">
+              <h1 class="center">My Recipes</h1>
+              <section class="my-recipes">SAVED RECIPES GO HERE</section>
+          </div>
+      </div>
+  </div>  
 
   <!-- FOOTER -->
   <footer class="page-footer">
     <div class="container">
       <div class="row">
+        <!-- SOCIAL LINKS -->
         <div class="col l3 m6 s12">
           <p class="footer-title">Follow</p>
           <p class="grey-text text-lighten-4">
@@ -98,15 +94,14 @@
             </span>
           </p>
         </div>
-
+        <!-- CONTACT -->
         <div class="col l3 m6 s12">
           <p class="footer-title">Contact</p>
-
           <ul>
             <li>hi@belly.com</li>
           </ul>
         </div>
-
+        <!-- SUPPORT -->
         <div class="col l3 m6 s12">
           <p class="footer-title">Support</p>
           <ul>
@@ -115,7 +110,7 @@
             <li>Status</li>
           </ul>
         </div>
-
+        <!-- ACCOUNT -->
         <div class="col l3 m6 s12">
           <p class="footer-title">Account</p>
           <ul>
@@ -124,15 +119,13 @@
             <li><a class="white-text" href="myrecipes.html">My Account</a></li>
           </ul>
         </div>
-
       </div>
     </div>
-
+    <!-- COPYRIGHT -->
     <div class="footer-copyright">
       <div class="container">Copyright 2018</div>
     </div>
   </footer>
-
 
   <!--  Scripts-->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
@@ -143,3 +136,4 @@
   <script src="assets/javascript/logic.js"></script>
   <script src="assets/javascript/auth.js"></script>
 </body>
+</html>
