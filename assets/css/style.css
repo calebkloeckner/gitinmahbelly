@@ -165,11 +165,10 @@ h6 {
 }
 
 .my-recipes {
-  border: 1px solid black;
+  /* border: 1px solid black; */
   padding: 20px;
-  width: 80%;
-  margin-left: 10%;
-  margin-right: 10%;
+  width: 100%;
+  min-height: 200px;
 }
 
 .searched-ingredients {
@@ -179,10 +178,10 @@ h6 {
 
 
 .search-container{
-  width: 490px !important;
+  width: 800px;
   display: block;
   margin: 0 auto;
-  padding: 0px;
+  padding-top: 3%;
   height: 65px;
 }
 
@@ -221,40 +220,6 @@ input#search-bar{
   height: 75px;
   top: -62px;
   right: -35px;
-}
-
-/* Calebs addition */
-
-.food {
-  margin: .3%;
-  border: 0px;
-  padding: 0px;
-  margin: 0px;
-  width: 250px;
-  height: 300px;
-}
-#recipe-body {
-  font-size: 10px;
-}
-
-#recipe-image{
-  border-radius: 8px;
-  float: right;
-}
-/* Dante addition
-*/
-h1 {
-  margin: 0%;
-}
-
-li {
-  align-content: left;
-}
-
-.food {
-  width: 250px;
-  height: 150px;
-  border: 0px solid;
 }
 
 #login-side {
@@ -305,6 +270,14 @@ li {
   .header2 {
     font-size: 72pt;
   }
+
+  .search-container{
+    width: 300px;
+    display: block;
+    margin: 0 auto;
+    padding-top: 3%;
+    height: 65px;
+  }
 }
 
 @media only screen and (max-width: 850px) {
@@ -334,6 +307,14 @@ li {
     font-size: 72pt;
   }
 
+  .search-container{
+    width: 400px;
+    display: block;
+    margin: 0 auto;
+    padding-top: 3%;
+    height: 65px;
+  }
+
 }
 
 .ingredient-button {
@@ -350,5 +331,107 @@ li {
   border-radius: 5px;
   letter-spacing: 2;
   margin: 5px;
+}
 
+/* Calebs addition */
+
+
+#recipe-body {
+  font-size: 10px;
+}
+
+#recipe-image{
+  border-radius: 8px;
+  float: right;
+}
+
+
+/* Dante addition
+*/
+h1 {
+  margin: 0%;
+}
+
+li {
+  align-content: left;
+}
+
+.food {
+  width: 250px;
+  height: 150px;
+  border: 0px solid;
+}
+
+/*floating title css*/
+*, :before, :after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.content {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+  margin: auto;
+  overflow: hidden;
+}
+.content .content-overlay {
+  background: rgba(255, 255, 255, 0.75);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  transition: all 0.4s ease-in-out 0s;
+}
+.content:hover .content-overlay {
+  opacity: 1;
+}
+.content:hover .content-details {
+  top: 30%;
+  left: 50%;
+  opacity: 1;
+}
+
+.content-image {
+  width: 100%;
+}
+
+.content-details {
+  position: absolute;
+  text-align: justify;
+  font-weight: bolder;
+  padding-left: 1em;
+  padding-right: 1em;
+  width: auto;
+  text-align: center;
+  top: 30%;
+  left: 50%;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  transition: all 0.3s ease-in-out 0s;
+}
+.content-details h3 {
+  color: #000;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.fadeIn {
+  top: 80%;
+}
+
+.foodtag {
+  align-items: flex-start;
+  display: inline-block;
+  margin: .3%;
+  border: 0px;
+  padding: 0px;
+  margin: 0px;
+  width: 250px;
+  height: 300px;
 }
