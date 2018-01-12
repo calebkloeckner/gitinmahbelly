@@ -177,12 +177,15 @@ h6 {
   margin: 5px;
 }
 
+
 .search-container{
-  width: 490px;
+  width: 490px !important;
   display: block;
   margin: 0 auto;
   padding: 0px;
+  height: 65px;
 }
+
 
 input#search-bar{
   margin: 0 auto;
@@ -330,5 +333,22 @@ li {
   .header2 {
     font-size: 72pt;
   }
+
+}
+
+.ingredient-button {
+  padding: 8px 8px 8px 32px;
+  font-family: Arial, Verdana;   
+  background: #f0f0f0 url(http://streetsandstripes.com/wp-content/uploads/2018/01/exit-01.png);
+  background-position: 95%;
+  background-repeat: no-repeat;
+  text-transform: uppercase;
+  padding: 10px 20px 10px 10px;
+  color: #f3f3ea;
+  background-color: #353328;
+  border: 1px solid #a24622;
+  border-radius: 5px;
+  letter-spacing: 2;
+  margin: 5px;
 
 }

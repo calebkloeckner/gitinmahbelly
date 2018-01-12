@@ -365,14 +365,9 @@ button,
 select {
   padding: 8px 8px 8px 32px;
   font-family: Arial, Verdana;   
-  background: #f0f0f0 url(http://streetsandstripes.com/wp-content/uploads/2018/01/exit-01.png);
-  background-position: 95%;
-  background-repeat: no-repeat;
   text-transform: uppercase;
   padding: 10px 20px 10px 10px;
   color: #f3f3ea;
-  background-color: #353328;
-  border: 1px solid #a24622;
   border-radius: 5px;
   letter-spacing: 2;
   margin: 5px;
