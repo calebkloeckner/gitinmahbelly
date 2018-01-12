@@ -8,8 +8,11 @@ const imdataSKey = "J8adbvz3Bs5KLJ2nTeFRXSAwKNUanpar";
 var imdataProduct = "";
 var runI = 0;
 
-const edamAppID = "c1724022";
-const edamAppKey = "cdded1f6d7a29716aec7adcec57b419e";
+// const edamAppID = "c1724022";
+// const edamAppKey = "cdded1f6d7a29716aec7adcec57b419e";
+//local test key
+const edamAppID = "926110ce";
+const edamAppKey = "c284b239fa0287a8009b4ce59afed42c";
 
 var edamIng = [];  //Spaces need to be translated to %20. required 
 var edamIngRandom = ['beef', 'pork', 'chicken', 'ramen', 'apple%20cherry', 'milk%20corn', 'curry']
@@ -29,18 +32,27 @@ $(document).ready(function () {
         $("#top-recipes").empty();
         for (var i = 0; i < recipes.length; i++) {
             console.log(recipes[i]);
-            $("#top-recipes").prepend(`<button class="food" data-button='${JSON.stringify(recipes[i])}' data-id="${i}"><img src="${recipes[i].image}"></button>`);
+$("#top-recipes").prepend(`
+<div class='card content foodtag' id='test'>
+      <div class='card-image'>
+        <img class='content-image' src='${recipes[i].image}'>
+        <div class='content-overlay'>
+        </div>
+      </div>
+      <div class='card-content content-details fadeIn'>
+        <p class='content-text foodish' alt='${JSON.stringify(recipes[i])}' data-id='${i}'>${recipes[i].title}</p>
+      </div>
+    </div>`);
+
+console.log(recipes[i].image)
+            
             // console.log(recipes[i]);
     
             // $("#top-recipes").attr("open", recipes[i]);
             // console.log(recipes);
         }
     }
-
-    $('form').submit(function(e){
-        e.preventDefault();
-    });
-
+    
     topRecipes();
 
     $.ajax({
@@ -152,8 +164,9 @@ $(document).ready(function () {
     // modal display
     $('.modal').modal();
     // on click function to open the modal
-    $(document).on('click', ".food", function () {
-        let clicky = JSON.parse($(this).attr("data-button"));
+    $(document).on('click', ".foodish", function () {
+        console.log(this)
+        let clicky = JSON.parse($(this).attr("alt"));
         let clickedId = $(this).attr("data-id");
         console.log(clicky);
         $('#modal1').modal('open');
@@ -172,6 +185,9 @@ $(document).ready(function () {
             $("#recipe-body").append(item);
         }
         $("#recipe-name").html(recipeTitle).append("<img src='#' id='recipe-image'>");
+        
+        // <div class="content-overlay">
+
         // $("#recipe-body").attr(recipeBody); this was the old way. Don't think its needed
         $("#recipe-image").attr("src", recipeImage);
         $("#recipe-url").attr("href", recipeUrl);

@@ -246,14 +246,7 @@ input#search-bar{
 
 /* Calebs addition */
 
-.food {
-  margin: .3%;
-  border: 0px;
-  padding: 0px;
-  margin: 0px;
-  width: 250px;
-  height: 300px;
-}
+
 #recipe-body {
   font-size: inherit;
 }
@@ -262,6 +255,8 @@ input#search-bar{
   border-radius: 8px;
   float: right;
 }
+
+
 /* Dante addition
 */
 h1 {
@@ -278,3 +273,76 @@ li {
   border: 0px solid;
 }
 
+
+/*testing css*/
+*, :before, :after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.content {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+  margin: auto;
+  overflow: hidden;
+}
+.content .content-overlay {
+  background: rgba(255, 255, 255, 0.75);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  transition: all 0.4s ease-in-out 0s;
+}
+.content:hover .content-overlay {
+  opacity: 1;
+}
+.content:hover .content-details {
+  top: 30%;
+  left: 50%;
+  opacity: 1;
+}
+
+.content-image {
+  width: 100%;
+}
+
+.content-details {
+  position: absolute;
+  text-align: justify;
+  font-weight: bolder;
+  padding-left: 1em;
+  padding-right: 1em;
+  width: 100%;
+  top: 30%;
+  left: 50%;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  transition: all 0.3s ease-in-out 0s;
+}
+.content-details h3 {
+  color: #000;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.fadeIn {
+  top: 80%;
+}
+
+.foodtag {
+  align-items: flex-start;
+  display: inline-block;
+  margin: .3%;
+  border: 0px;
+  padding: 0px;
+  margin: 0px;
+  width: 250px;
+  height: 300px;
+}
