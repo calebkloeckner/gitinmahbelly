@@ -12,57 +12,61 @@
   <link href="assets/css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
   <!-- Font Awesome -->
   <script src="https://use.fontawesome.com/70d78677ed.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase-auth.js"></script>
+  <!-- auth0  -->
+    <!-- Latest patch release (recommended for production) -->
+    <script src="https://cdn.auth0.com/js/auth0/9.0.1/auth0.min.js"></script>
 </head>
 
 <body>
+
   <!-- HEADER  -->
-  <div id="index-banner" class="parallax-container">
-    <div class="section no-pad-bot">
+  <div class="parallax-container">
+    <div class="section">
       <div class="parallax">
         <img src="images/headerimg-01.png" alt="Unsplashed background img 1">
       </div>
+
       <!-- LOGIN -->
       <div class="row">
-        <div class="col s0 m0 l9"></div>
-        <div class="col s12 m12 l3 right">
+        <div class="col s12 right-align">
           <span class="flow-text">
-            <input id="txtEmail" type="email" placeholder="Email">
-            <input id="txtPassword" type="password" placeholder="Password">
             <form id="btnLogin" class="btn btn-secondary">Login</form>
-            <form id="btnSignUp" class="btn btn-secondary">Sign Up</form>
-            <form id="btnLogout" class="btn btn-secondary">Logout</form>
+            <form id="btnLogout" class="btn btn-secondary"><span id="status"></span>Logout</form>
           </span>
         </div>
-      </div>
-    </div>
 
-    <!-- HEADER TEXT -->
-    <div class="container" id="header-text">
-      <div class="col s12 m4 l2"></div>
-      <div class="col s12 m4 l8">
-        <h3 class="header center header1" style="padding-bottom: 2%;">GET</h3>
-        <h1 class="header center header2">COOKIN</h1>
-        <h3 class="header center header1" style="padding-top: 2%;">GOOD LOOKIN</h3>
+        <!-- HEADER TEXT -->
+        <div class="col s12 m2 l2"></div>
+        <div class="col s12 m8 l8">
+          <h3 class="header center header1" style="padding-bottom: 2%;">GET</h3>
+          <h1 class="header center header2">COOKIN</h1>
+          <h3 class="header center header1" style="padding-top: 2%;">GOOD LOOKIN</h3>
+        </div>
+        <div class="col s12 m2 l2"></div>
       </div>
 
-      <div class="col s12 m4 l2"></div>
- 
+
+      <!-- NAVIGATION -->
       <div class="row">
-        <div class="col s12 m3 l2"></div>
-        <div class="col s12 m6 l8">
+        <div class="col s12 m2 l2"></div>
+        <div class="col s12 m8 l8">
           <nav class="white center-align" role="navigation" id="top-nav">
             <div class="nav-links center-align">
               <ul class="center">
-                <li><a href="index.html" class="top-nav-links">Home</a></li>
-                <li><a href="about.html" class="top-nav-links">About</a></li>
-                <li><a href="myrecipes.html" class="top-nav-links">My Recipes</a></li>
+                <li>
+                  <a href="index.html" class="top-nav-links">Home</a>
+                </li>
+                <li>
+                  <a href="about.html" class="top-nav-links">About</a>
+                </li>
+                <li>
+                  <a href="myrecipes.html" class="top-nav-links">My Recipes</a>
+                </li>
               </ul>
             </div>
           </nav>
         </div>
-        <div class="col s12 m3 l2"></div>
+        <div class="col s12 m2 l2"></div>
       </div>
     </div>
   </div>
@@ -71,53 +75,59 @@
   <div class="container section">
     <div class="row">
       <div class="col s12" id="section2">
-        <p class="center" style="text-transform: uppercase; color: #353328;letter-spacing: 5pt;font-size: 24pt; text-align: center; font-weight: bold; line-height: 50pt;">Using the ingredients<br/>you have at home...</p>
-        <p class="center" style="text-transform: uppercase; color: #b8bc84;letter-spacing: 5pt;font-size: 24pt; text-align: center; font-weight: bold; line-height: 50pt;">Become the next<br/>Master Chef!</p>
+        <p class="center" style="text-transform: uppercase; color: #353328;letter-spacing: 5pt;font-size: 24pt; text-align: center; font-weight: bold; line-height: 50pt;">Using the ingredients
+          <br/>you have at home...</p>
+        <p class="center" style="text-transform: uppercase; color: #b8bc84;letter-spacing: 5pt;font-size: 24pt; text-align: center; font-weight: bold; line-height: 50pt;">Become the next
+          <br/>Master Chef!</p>
       </div>
-      </div>
-    
-    <!-- SEARCH BAR -->
-  <div class="row">
-    <div class="col s12">
-      <form class="search-container" style="padding:0px;">
-        <input type="text" id="search-bar" placeholder="What ingredients do you have?">
-        <img class="search-icon search-button" src="http://www.endlessicons.com/wp-content/uploads/2012/12/search-icon.png">
-      </form>
-      </div>
-      <!-- SEARCHED INGREDIENTS BUTTONS -->
-        <div class="col l2 m2 s2"></div>
-        <div class="searched-ingredients center-align col l8 m8 s8" style="padding-bottom: 5%;"></div>
-        <div class="col l2 m2 s2"></div>
-      </div>
-
     </div>
- 
 
-  <div class="row">
-    <div class="l4 m4 s4"></div>
-    <div class="l4 m4 s4"><h6>TOP RECIPES</h6></div>
-    <div class="l4 m4 s4"></div>
+    <!-- SEARCH BAR -->
+    <div class="row">
+      <div class="col s12">
+        <form class="search-container" style="padding:0px;">
+          <input type="text" id="search-bar" placeholder="What ingredients do you have?">
+          <img class="search-icon search-button" src="http://www.endlessicons.com/wp-content/uploads/2012/12/search-icon.png">
+        </form>
+      </div>
+
+      <!-- SEARCHED INGREDIENTS BUTTONS -->
+      <div class="col l2 m2 s2"></div>
+      <div class="searched-ingredients center-align col l8 m8 s8" style="padding-bottom: 5%;"></div>
+      <div class="col l2 m2 s2"></div>
+    </div>
   </div>
 
-<!-- RECIPES DISPLAY -->
-<div class="row">
-<div class="col l2 m2 s12"></div>
-  <div style="text-align: center;" id="top-recipes" class="recipes col l8 m8 s12"></div>
+  <!-- TOP RECIPES -->
+  <div class="row">
+    <div class="l4 m4 s4"></div>
+    <div class="l4 m4 s4">
+      <h6>TOP RECIPES</h6>
+    </div>
+    <div class="l4 m4 s4">
+    </div>
+  </div>
+
+  <!-- RECIPES DISPLAY -->
+  <div class="row">
+    <div class="col l2 m2 s12"></div>
+    <div style="text-align: center;" id="top-recipes" class="recipes col l8 m8 s12"></div>
+  </div>
+
   <!-- Modal Trigger -->
   <!-- Modal Structure -->
   <div id="modal1" class="modal modal-fixed-footer">
     <div class="modal-content">
-      <img src="#" id="recipe-image">
       <h4 id="recipe-name"></h4>
       <h5 id="recipe-body"></h5>
-      <a href="#" target="_blank" id="recipe-url">Link to the full recipe</a>
+      <a href="#" target="_blank" id="recipe-url">FULL RECIPE</a>
     </div>
     <div class="modal-footer">
       <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
     </div>
   </div>
   <div class="col l2 m2 s12"></div>
-</div>
+
 
   <!-- FOOTER -->
   <footer class="page-footer">
@@ -140,7 +150,6 @@
 
         <div class="col l3 m6 s12">
           <p class="footer-title">Contact</p>
-
           <ul>
             <li>hi@belly.com</li>
           </ul>
@@ -160,7 +169,9 @@
           <ul>
             <li>Login</li>
             <li>Logout</li>
-            <li><a class="white-text" href="myrecipes.html">My Account</a></li>
+            <li>
+              <a class="white-text" href="myrecipes.html">My Account</a>
+            </li>
           </ul>
         </div>
 
@@ -180,4 +191,7 @@
   <script src="assets/javascript/instance.js"></script>
   <script src="assets/javascript/app.js"></script>
   <script src="assets/javascript/logic.js"></script>
+  <script src="assets/javascript/auth.js"></script>
 </body>
+
+</html>
