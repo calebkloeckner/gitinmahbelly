@@ -18,12 +18,12 @@ var edamURL = 'https://api.edamam.com/search?q='+edamIng+'&app_id='+edamAppID+'&
 
 var testResponse = {};
 
-let recipes = [];
 
 console.log("working");
 // $(toggle-class)
 
 $(document).ready(function () {
+ let recipes = [];
     function topRecipes() {
         console.log(recipes);
         $("#top-recipes").empty();
