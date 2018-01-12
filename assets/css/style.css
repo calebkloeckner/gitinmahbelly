@@ -193,7 +193,7 @@ h6 {
 
 .searched-ingredients {
   font-size: 14pt;
-  margin: 0;  
+  margin: 5px;
 }
 
 .header-text {
@@ -254,6 +254,9 @@ input#search-bar{
   width: 250px;
   height: 300px;
 }
+#recipe-body {
+  font-size: 10px;
+}
 
 /* Dante addition
 */
@@ -265,9 +268,8 @@ li {
   align-content: left;
 }
 
-.images {
+.food {
   width: 250px;
   height: 150px;
   border: 0px solid;
 }
-
