@@ -68,17 +68,34 @@ p {
 @media only screen and (max-width : 992px) {
   .parallax-container .section {
     position: absolute;
-    top: 40%;
+    top: 1%;
   }
   #index-banner .section {
-    top: 10%;
+    top: 0%;
   }
 
 }
 
 @media only screen and (max-width : 600px) {
   #index-banner .section {
-    top: 0;
+    top: 1%;
+  }
+  .top-nav-links {
+    font-size: 14pt;
+    padding-top: 0;
+  }
+  .nav-links{
+    padding: 0;
+  }
+  .header1{
+    margin-bottom: 0;
+  }
+
+  .parallax-container {
+    min-height: 450px;
+  }
+  .btnLogin {
+    width: 20px;
   }
 }
 
@@ -180,7 +197,6 @@ h6 {
   margin-bottom: 5%;
   vertical-align: middle;
   padding:10px;
-  border: 1px black solid;
 }
 
 
@@ -194,15 +210,7 @@ h6 {
 
 .searched-ingredients {
   font-size: 14pt;
-<<<<<<< HEAD
-<<<<<<< HEAD
   margin: 5px;
-=======
-  margin: 0;  
->>>>>>> 1da2ccae364321b6a48a4b280b1269796d7d4e88
-=======
-  margin: 5px;
->>>>>>> 663798eed5592472567fc56212e9bdd66e7a9f01
 }
 
 .header-text {
@@ -264,7 +272,7 @@ input#search-bar{
   height: 300px;
 }
 #recipe-body {
-  font-size: inherit;
+  font-size: 10px;
 }
 
 #recipe-image{
@@ -279,4 +287,14 @@ h1 {
 
 li {
   align-content: left;
+}
+
+.food {
+  width: 250px;
+  height: 150px;
+  border: 0px solid;
+}
+
+#login-side {
+  padding: 10px;
 }
