@@ -68,17 +68,34 @@ p {
 @media only screen and (max-width : 992px) {
   .parallax-container .section {
     position: absolute;
-    top: 40%;
+    top: 1%;
   }
   #index-banner .section {
-    top: 10%;
+    top: 0%;
   }
 
 }
 
 @media only screen and (max-width : 600px) {
   #index-banner .section {
-    top: 0;
+    top: 1%;
+  }
+  .top-nav-links {
+    font-size: 14pt;
+    padding-top: 0;
+  }
+  .nav-links{
+    padding: 0;
+  }
+  .header1{
+    margin-bottom: 0;
+  }
+
+  .parallax-container {
+    min-height: 450px;
+  }
+  .btnLogin {
+    width: 20px;
   }
 }
 
@@ -255,7 +272,7 @@ input#search-bar{
   height: 300px;
 }
 #recipe-body {
-  font-size: inherit;
+  font-size: 10px;
 }
 
 #recipe-image{
@@ -276,4 +293,8 @@ li {
   width: 250px;
   height: 150px;
   border: 0px solid;
+}
+
+#login-side {
+  padding: 10px;
 }
