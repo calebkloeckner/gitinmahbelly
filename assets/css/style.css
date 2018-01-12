@@ -54,32 +54,16 @@ p {
 }
 
 .parallax-container {
-  min-height: 600px;
+  min-height: 500px;
   /* line-height:100%; */
   height: auto;
   color: rgba(255,255,255,.9);
   vertical-align: middle;
   position: relative;
 }
-  .parallax-container .section {
-    width: 100%;
-  }
 
-@media only screen and (max-width : 992px) {
-  .parallax-container .section {
-    position: absolute;
-    top: 40%;
-  }
-  #index-banner .section {
-    top: 10%;
-  }
-
-}
-
-@media only screen and (max-width : 600px) {
-  #index-banner .section {
-    top: 0;
-  }
+.parallax-container .section {
+  width: 100%;
 }
 
 .icon-block {
@@ -162,26 +146,23 @@ h6 {
   text-align: center;
 }
 
-
-
 #section2 {
   padding: 0px 10px 0px 10px;
   text-align:center;
 }
 
 #section2-about {
-  padding: 0px 40px 25px 40px;
+  padding-top: 2%;
   text-align:center;
 }
-
 
 .recipes {
   height: auto;
   margin-bottom: 5%;
   vertical-align: middle;
   padding:10px;
-}
 
+}
 
 .my-recipes {
   border: 1px solid black;
@@ -193,20 +174,18 @@ h6 {
 
 .searched-ingredients {
   font-size: 14pt;
-  margin: 0;  
+  margin: 5px;
 }
 
-.header-text {
-  text-align:center;
-  margin: 0;
-}
 
 .search-container{
-  width: 490px;
+  width: 490px !important;
   display: block;
   margin: 0 auto;
   padding: 0px;
+  height: 65px;
 }
+
 
 input#search-bar{
   margin: 0 auto;
@@ -244,11 +223,106 @@ input#search-bar{
   right: -35px;
 }
 
+#login-side {
+  padding: 10px;
+}
+
+
+/* Mobile Styling */
+
+@media only screen and (max-width : 992px) {
+  .parallax-container .section {
+    position: absolute;
+    top: 1%;
+  }
+  #index-banner .section {
+    top: 0%;
+  }
+
+  h1 {
+    font-size: 10pt;
+  }
+
+  .header2 {
+    font-size: 72pt;
+  }
+
+}
+
+@media only screen and (max-width : 600px) {
+  #index-banner .section {
+    top: 1%;
+  }
+  .top-nav-links {
+    font-size: 14pt;
+    padding-top: 0;
+  }
+  .nav-links{
+    padding: 0;
+  }
+  .header1{
+    margin-bottom: 0;
+  }
+
+  .parallax-container {
+    min-height: 450px;
+  }
+
+  .header2 {
+    font-size: 72pt;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  #index-banner .section {
+    top: 1%;
+  }
+
+  h1 {
+    font-size: 10pt;
+  }
+
+  .top-nav-links {
+    font-size: 14pt;
+    padding-top: 0;
+  }
+  .nav-links{
+    padding: 0;
+  }
+  .header1{
+    margin-bottom: 0;
+  }
+
+  .parallax-container {
+    min-height: 450px;
+  }
+  .header2 {
+    font-size: 72pt;
+  }
+
+}
+
+.ingredient-button {
+  padding: 8px 8px 8px 32px;
+  font-family: Arial, Verdana;   
+  background: #f0f0f0 url(http://streetsandstripes.com/wp-content/uploads/2018/01/exit-01.png);
+  background-position: 95%;
+  background-repeat: no-repeat;
+  text-transform: uppercase;
+  padding: 10px 20px 10px 10px;
+  color: #f3f3ea;
+  background-color: #353328;
+  border: 1px solid #a24622;
+  border-radius: 5px;
+  letter-spacing: 2;
+  margin: 5px;
+}
+
 /* Calebs addition */
 
 
 #recipe-body {
-  font-size: inherit;
+  font-size: 10px;
 }
 
 #recipe-image{
@@ -267,14 +341,13 @@ li {
   align-content: left;
 }
 
-.images {
+.food {
   width: 250px;
   height: 150px;
   border: 0px solid;
 }
 
-
-/*testing css*/
+/*floating title css*/
 *, :before, :after {
   margin: 0;
   padding: 0;

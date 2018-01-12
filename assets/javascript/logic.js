@@ -21,12 +21,12 @@ var edamURL = 'https://api.edamam.com/search?q='+edamIng+'&app_id='+edamAppID+'&
 
 var testResponse = {};
 
-let recipes = [];
 
 console.log("working");
 // $(toggle-class)
 
 $(document).ready(function () {
+ let recipes = [];
     function topRecipes() {
         console.log(recipes);
         $("#top-recipes").empty();
@@ -189,7 +189,7 @@ console.log(recipes[i].image)
         // <div class="content-overlay">
 
         // $("#recipe-body").attr(recipeBody); this was the old way. Don't think its needed
-        // $("#recipe-image").attr("src", recipeImage);
+        $("#recipe-image").attr("src", recipeImage);
         $("#recipe-url").attr("href", recipeUrl);
         console.log(recipeUrl);
         console.log("boogers");
