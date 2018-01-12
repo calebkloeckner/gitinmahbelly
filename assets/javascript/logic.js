@@ -173,7 +173,7 @@ $(document).ready(function () {
         }
         $("#recipe-name").html(recipeTitle).append("<img src='#' id='recipe-image'>");
         // $("#recipe-body").attr(recipeBody); this was the old way. Don't think its needed
-        $("#recipe-image").attr("src", recipeImage);
+        // $("#recipe-image").attr("src", recipeImage);
         $("#recipe-url").attr("href", recipeUrl);
         console.log(recipeUrl);
         console.log("boogers");

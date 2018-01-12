@@ -30,9 +30,9 @@
           <span class="flow-text">
             <input id="txtEmail" type="email" placeholder="Email">
             <input id="txtPassword" type="password" placeholder="Password">
-            <button id="btnLogin" class="btn btn-secondary">Login</button>
-            <button id="btnSignUp" class="btn btn-secondary">Sign Up</button>
-            <button id="btnLogout" class="btn btn-secondary">Logout</button>
+            <form id="btnLogin" class="btn btn-secondary">Login</form>
+            <form id="btnSignUp" class="btn btn-secondary">Sign Up</form>
+            <form id="btnLogout" class="btn btn-secondary">Logout</form>
           </span>
         </div>
       </div>
@@ -42,13 +42,13 @@
     <div class="container" id="header-text">
       <div class="col s12 m4 l2"></div>
       <div class="col s12 m4 l8">
-        <h5 class="header center header1">GET</h5>
+        <h3 class="header center header1" style="padding-bottom: 2%;">GET</h3>
         <h1 class="header center header2">COOKIN</h1>
-        <h5 class="header center header1">GOOD LOOKIN</h5>
+        <h3 class="header center header1" style="padding-top: 2%;">GOOD LOOKIN</h3>
       </div>
 
       <div class="col s12 m4 l2"></div>
-
+ 
       <div class="row">
         <div class="col s12 m3 l2"></div>
         <div class="col s12 m6 l8">
@@ -71,48 +71,53 @@
   <div class="container section">
     <div class="row">
       <div class="col s12" id="section2">
-        <h5 class="center">Using the ingredients<br/>you have at home...</h5>
-        <h6 class="center" style="padding-bottom: 5%;">Become the next<br/>Master Chef!</h6>
-      </div>
+        <p class="center" style="text-transform: uppercase; color: #353328;letter-spacing: 5pt;font-size: 24pt; text-align: center; font-weight: bold; line-height: 50pt;">Using the ingredients<br/>you have at home...</p>
+        <p class="center" style="text-transform: uppercase; color: #b8bc84;letter-spacing: 5pt;font-size: 24pt; text-align: center; font-weight: bold; line-height: 50pt; padding-bottom: 5%;">Become the next<br/>Master Chef!</p>
 
-      <!-- SEARCH BAR -->
-      <div class="col s12">
-        <form class="search-container">
-          <input type="text" id="search-bar" placeholder="What ingredients do you have?">
-          <img class="search-icon search-button" src="http://www.endlessicons.com/wp-content/uploads/2012/12/search-icon.png">
-        </form>
       </div>
-      
-      <!-- SEARCHED INGREDIENTS BUTTONS -->
-      <div class="col s12">
-        <div class="searched-ingredients"></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- RECIPES DISLPLAYED HERE -->
-  <!-- <div class="recipes valign-wrapper">
-  <div class="container">
-    <div class="col s12">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos quia, at reprehenderit rem hic quam fugit voluptates commodi, quo possimus vel dolor perferendis earum omnis nulla beatae, ex ad cupiditate eaque ipsa obcaecati quibusdam repudiandae maxime iusto. Esse qui modi vitae eaque, natus maiores facilis sit ab debitis illo laboriosam!
     
+    <!-- SEARCH BAR -->
+  <div class="row">
+    <div class="col s12">
+      <form class="search-container" style="padding:0px;">
+        <input type="text" id="search-bar" placeholder="What ingredients do you have?">
+        <img class="search-icon search-button" src="http://www.endlessicons.com/wp-content/uploads/2012/12/search-icon.png">
+      </form>
+      </div>
+      <!-- SEARCHED INGREDIENTS BUTTONS -->
+        <div class="col l2 m2 s2"></div>
+        <div class="searched-ingredients center-align col l8 m8 s8" style="padding-bottom: 5%;"></div>
+        <div class="col l2 m2 s2"></div>
+      </div>
+
+    </div>
+ 
+
+  <div class="row">
+    <div class="l4 m4 s4"></div>
+    <div class="l4 m4 s4"><h6>TOP RECIPES</h6></div>
+    <div class="l4 m4 s4"></div>
   </div>
 </div> -->
-  <div style="text-align: center;" id="top-recipes"></div>
+
+<!-- RECIPES DISPLAY -->
+<div class="row">
+<div class="col l2 m2 s12"></div>
+  <div style="text-align: center;" id="top-recipes" class="recipes col l8 m8 s12"></div>
   <!-- Modal Trigger -->
   <!-- Modal Structure -->
   <div id="modal1" class="modal modal-fixed-footer">
     <div class="modal-content">
-            <h4 id="recipe-name"></h4>
-            <h5 id="recipe-body"></h5>
-        <a href="#" target=_ "blank" id="recipe-url">Link to the full recipe</a>
+      <h4 id="recipe-name"></h4>
+      <h5 id="recipe-body"></h5>
+      <a href="#" target=_ "blank" id="recipe-url">Link to the full recipe</a>
     </div>
-  
     <div class="modal-footer">
       <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
     </div>
   </div>
-
-
+  <div class="col l2 m2 s12"></div>
+</div>
   <!-- FOOTER -->
   <footer class="page-footer">
     <div class="container">
@@ -120,15 +125,24 @@
         <div class="col l3 m6 s12">
           <p class="footer-title">Follow</p>
           <p class="grey-text text-lighten-4">
-            <span class="fa-stack fa-lg"><i class="fa fa-twitter fa-stack-1x"></i></span>
-            <span class="fa-stack fa-lg"><i class="fa fa-facebook fa-stack-1x"></i></span>
-            <span class="fa-stack fa-lg"><i class="fa fa-instagram fa-stack-1x"></i></span>
+            <span class="fa-stack fa-lg">
+              <i class="fa fa-twitter fa-stack-1x"></i>
+            </span>
+            <span class="fa-stack fa-lg">
+              <i class="fa fa-facebook fa-stack-1x"></i>
+            </span>
+            <span class="fa-stack fa-lg">
+              <i class="fa fa-instagram fa-stack-1x"></i>
+            </span>
           </p>
         </div>
 
         <div class="col l3 m6 s12">
           <p class="footer-title">Contact</p>
-          <ul><li>hi@belly.com</li></ul>
+
+          <ul>
+            <li>hi@belly.com</li>
+          </ul>
         </div>
 
         <div class="col l3 m6 s12">
