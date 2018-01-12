@@ -255,9 +255,13 @@ input#search-bar{
   height: 300px;
 }
 #recipe-body {
-  font-size: 10px;
+  font-size: inherit;
 }
 
+#recipe-image{
+  border-radius: 8px;
+  float: right;
+}
 /* Dante addition
 */
 h1 {
