@@ -193,7 +193,7 @@ h6 {
 
 .searched-ingredients {
   font-size: 14pt;
-  margin: 0;  
+  margin: 5px;
 }
 
 .header-text {
@@ -272,9 +272,8 @@ li {
   align-content: left;
 }
 
-.images {
+.food {
   width: 250px;
   height: 150px;
   border: 0px solid;
 }
-
