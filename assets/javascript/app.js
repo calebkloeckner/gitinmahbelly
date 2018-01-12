@@ -20,8 +20,10 @@ edamIng.push(edamIngRandom[getRandomInt(edamIngRandom.length)]);
 var edamURL = 'https://api.edamam.com/search?q='+edamIng+'&app_id='+edamAppID+'&app_key='+edamAppKey;
 
 var testResponse = {};
+let recipes = [];
+let clicky;
 
-
+let database = firebase.database();
 
 $(document).ready(function(){
     
@@ -35,5 +37,7 @@ $(document).ready(function(){
             
         $(".content-details").css({"top": "0", "left": "0", "opacity": "0"});
     });
+
+    
 });
 
