@@ -26,32 +26,34 @@ console.log("working");
 // $(toggle-class)
 
 $(document).ready(function () {
- let recipes = [];
-    function topRecipes() {
-        console.log(recipes);
-        $("#top-recipes").empty();
-        for (var i = 0; i < recipes.length; i++) {
-            console.log(recipes[i]);
-$("#top-recipes").prepend(`
-<div class='card content foodtag' id='test'>
-      <div class='card-image'>
-        <img class='content-image' src='${recipes[i].image}'>
-        <div class='content-overlay'>
-        </div>
-      </div>
-      <div class='card-content content-details fadeIn'>
-        <p class='content-text foodish' alt='${JSON.stringify(recipes[i])}' data-id='${i}'>${recipes[i].title}</p>
-      </div>
-    </div>`);
 
-console.log(recipes[i].image)
-            
-            // console.log(recipes[i]);
-    
-            // $("#top-recipes").attr("open", recipes[i]);
-            // console.log(recipes);
-        }
-    }
+  // do not remove. this allows ingredient buttons to be created removed, and data stored from responses.
+  // without this function, interaction with the search bar causes the whole page to re-load
+  // and removes all searched ingredient buttons, as well as breaks the ingredients append.
+    $('form').submit(function(e){
+        e.preventDefault();
+    });
+
+  let recipes = [];
+  function topRecipes() {
+    console.log(recipes);
+    $("#top-recipes").empty();
+    for (var i = 0; i < recipes.length; i++) {
+      console.log(recipes[i]);
+      $("#top-recipes").prepend(`
+        <div class='card content foodtag' id='test'>
+          <div class='card-image'>
+            <img class='content-image' src='${recipes[i].image}'>
+            <div class='content-overlay'>
+            </div>
+          </div>
+          <div class='card-content content-details fadeIn'>
+            <p class='content-text foodish' alt='${JSON.stringify(recipes[i])}' data-id='${i}'>${recipes[i].title}</p>
+          </div>
+        </div>`);
+
+      console.log(recipes[i].image)
+    }};
     
     topRecipes();
 
@@ -61,6 +63,7 @@ console.log(recipes[i].image)
     }).done(function(response) {        
         edamIng=[];
         $('form').submit(function(e){
+            if ($('#search-bar').val() > ""){
             
             var buttonV = $('<button>');
             var text1 = $('#search-bar').val();
@@ -79,24 +82,29 @@ console.log(recipes[i].image)
             buttonV.attr('id', `ing-${text1}`);
             buttonV.attr('data-button', text1);
             edamIng.push(text1);
-          });
+            }
+            else {
+                $('.search-button').click();
+            }
+        });
 
-          $(document).on('click', ".ingredient-button", function () {
-            let removeAct = $(this).attr("data-button");
-            let removeActId = $(this).attr("id");
-            var indexInArrayToRemove = edamIng.indexOf($(this).attr("data-button"));
-            delete edamIng[indexInArrayToRemove];
-            $(this).remove(); 
-            edamIng.splice(indexInArrayToRemove, 1);
-          });
-          $('.search-button').on('click', function () {
-            
-            for (let i = 0; i < edamIng.length; i++) {
+
+        $(document).on('click', ".ingredient-button", function () {
+          let removeAct = $(this).attr("data-button");
+          let removeActId = $(this).attr("id");
+          var indexInArrayToRemove = edamIng.indexOf($(this).attr("data-button"));
+          delete edamIng[indexInArrayToRemove];
+          $(this).remove(); 
+          edamIng.splice(indexInArrayToRemove, 1);
+        });
+          
+        $('.search-button').on('click', function () {
+          for (let i = 0; i < edamIng.length; i++) {
             edamIng = edamIng.toString().replace(",", "%20");
             console.log(edamIng);
             console.log("---");
-        };
-        var edamURL = 'https://api.edamam.com/search?q='+edamIng+'&app_id='+edamAppID+'&app_key='+edamAppKey;
+          };
+          var edamURL = 'https://api.edamam.com/search?q='+edamIng+'&app_id='+edamAppID+'&app_key='+edamAppKey;
             console.log("search executing");
             console.log(edamIng);
             console.log(edamURL);
