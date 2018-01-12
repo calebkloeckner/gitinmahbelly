@@ -10,7 +10,6 @@ $(document).ready(function () {
         e.preventDefault();
     });
 
-  let recipes = [];
   function topRecipes() {
     console.log(recipes);
     $("#top-recipes").empty();
@@ -24,10 +23,9 @@ $(document).ready(function () {
             </div>
           </div>
           <div class='card-content content-details fadeIn'>
-            <p class='content-text foodish' alt='${JSON.stringify(recipes[i])}' data-id='${i}'>${recipes[i].title}</p>
+            <p class='content-text foodish' data-button='${JSON.stringify(recipes[i])}' data-id='${i}'>${recipes[i].title}</p>
           </div>
         </div>`);
-
       console.log(recipes[i].image)
     }};
     
@@ -121,7 +119,7 @@ $(document).ready(function () {
       // on click function to open the modal
       $(document).on('click', ".foodish", function () {
         console.log(this)
-        let clicky = JSON.parse($(this).attr("alt"));
+        let clicky = JSON.parse($(this).attr("data-button"));
         let clickedId = $(this).attr("data-id");
         console.log(clicky);
         $('#modal1').modal('open');
@@ -161,4 +159,27 @@ $(document).ready(function () {
           }
           topRecipes();
       });
+
+      // save button to save to firebase
+
+      
+    $(".save-button").on("click", function(event) {
+      console.log(clicky);
+      event.preventDefault();
+      firebase.database().ref().push(clicky);
+  });
+  firebase.database().ref().on("child_added", function(childSnapshot, prevChildKey){
+    
+      let savedRecipe = childSnapshot.val();
+      console.log(childSnapshot.val());
+      $(".my-recipes-title").append(savedRecipe.title).append("<img src='#' id='my-recipe-image'>");
+      let i;
+      for (i = 0; i < savedRecipe.ingredients.length; i++) {
+          let item = $('<p>').html(savedRecipe.ingredients[i]);
+          $(".my-recipe-instruction").append(item);
+      }
+      $(".my-recipes-image").append(savedRecipe.image);
+      $(".my-recipes-link").append(savedRecipe.link);
+
+  });
 });
