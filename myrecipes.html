@@ -12,7 +12,8 @@
   <link href="assets/css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
   <!-- Font Awesome -->
   <script src="https://use.fontawesome.com/70d78677ed.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.8.2/firebase.js"></script>
+  <!-- <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase-app.js"></script> -->
   <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase-auth.js"></script>
 </head>
 
@@ -73,7 +74,12 @@
     <div class="row">
         <div class="col s12" id="section2-about">
             <h5 class="center">My Recipes</h5>
-            <section class="my-recipes">SAVED RECIPES GO HERE</section>
+            <section >
+              <div class="my-recipes-title"></div>
+              <div class="my-recipes-instruction"></div>
+              <div class="my-recipes-image"></div>
+              <div class="my-recipes-link"></div>
+            </section>
         </div>
     </div>
 </div>  
@@ -138,6 +144,6 @@
   <script src="js/materialize.js"></script>
   <script src="js/init.js"></script>
   <script src="assets/javascript/instance.js"></script>
-  <script src="assets/javascript/app.js"></script>
+  <!-- <script src="assets/javascript/app.js"></script> -->
   <script src="assets/javascript/logic.js"></script>
 </body>

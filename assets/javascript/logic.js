@@ -19,6 +19,10 @@ var edamURL = 'https://api.edamam.com/search?q='+edamIng+'&app_id='+edamAppID+'&
 var testResponse = {};
 
 let recipes = [];
+let clicky;
+
+
+// let database = firebase.database();
 
 console.log("working");
 // $(toggle-class)
@@ -153,7 +157,7 @@ $(document).ready(function () {
     $('.modal').modal();
     // on click function to open the modal
     $(document).on('click', ".food", function () {
-        let clicky = JSON.parse($(this).attr("data-button"));
+        clicky = JSON.parse($(this).attr("data-button"));
         let clickedId = $(this).attr("data-id");
         console.log(clicky);
         $('#modal1').modal('open');
@@ -178,7 +182,27 @@ $(document).ready(function () {
         console.log(recipeUrl);
         console.log("boogers");
     });
+
+    // save button to save to firebase
+    $(".save-button").on("click", function(event) {
+        console.log(clicky);
+        event.preventDefault();
+        firebase.database().ref().push(clicky);
+    });
+    firebase.database().ref().on("child_added", function(childSnapshot, prevChildKey){
       
+        let savedRecipe = childSnapshot.val();
+        console.log(childSnapshot.val());
+        $(".my-recipes-title").append(savedRecipe.title).append("<img src='#' id='my-recipe-image'>");
+        let i;
+        for (i = 0; i < savedRecipe.ingredients.length; i++) {
+            let item = $('<p>').html(savedRecipe.ingredients[i]);
+            $(".my-recipe-instruction").append(item);
+        }
+        $(".my-recipes-image").append(savedRecipe.image);
+        $(".my-recipes-link").append(savedRecipe.link);
+
+    });
     $.ajax({
         url: edamURL,
         method: 'GET'
