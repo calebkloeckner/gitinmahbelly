@@ -8,8 +8,11 @@ const imdataSKey = "J8adbvz3Bs5KLJ2nTeFRXSAwKNUanpar";
 var imdataProduct = "";
 var runI = 0;
 
-const edamAppID = "c1724022";
-const edamAppKey = "cdded1f6d7a29716aec7adcec57b419e";
+// const edamAppID = "c1724022";
+// const edamAppKey = "cdded1f6d7a29716aec7adcec57b419e";
+//local test key
+const edamAppID = "926110ce";
+const edamAppKey = "c284b239fa0287a8009b4ce59afed42c";
 
 var edamIng = [];  //Spaces need to be translated to %20. required 
 var edamIngRandom = ['beef', 'pork', 'chicken', 'ramen', 'apple%20cherry', 'milk%20corn', 'curry']
@@ -17,51 +20,24 @@ edamIng.push(edamIngRandom[getRandomInt(edamIngRandom.length)]);
 var edamURL = 'https://api.edamam.com/search?q='+edamIng+'&app_id='+edamAppID+'&app_key='+edamAppKey;
 
 var testResponse = {};
-
 let recipes = [];
+let clicky;
 
+let database = firebase.database();
 
-$(document).ready(function() {
-  
+$(document).ready(function(){
+    
+    $('.content').mouseenter(function() {
+        $(".content-overlay").css({"opacity": "1"});
+            
+        $(".content-details").css({"top": "50%", "left": "50%", "opacity": "1"});
+    });
+    $('.content').mouseleave(function() {
+        $(".content-overlay").css({"opacity": "0"});
+            
+        $(".content-details").css({"top": "0", "left": "0", "opacity": "0"});
+    });
 
-    // var edamIng = 'chicken';  //Spaces need to be translated to %20. required 
-    // var edamURL = 'https://api.edamam.com/search?q='+edamIng+'&app_id='+edamAppID+'&app_key='+edamAppKey;
-    // $('form').submit(function(e){
-    //   e.preventDefault();
-    //   var button = $('<button>');
-    //   var text1 = $('#search').val();
-    //   var edamIng = text1;
-    //   button.text(text1);
-    //   $('.placeholder').append(button)
-    //   $('#search').val(null);
-    // })
-    // $.ajax({
-    //   url: edamURL,
-    //   method: 'GET'
-    // }).done(function(response) {
-    //   testResponse = response;
-    //   var ingLoop = response.hits[0].recipe.ingredients;
-    //   console.log(response)
-    //   console.log(response.hits[0].recipe.image)
-    //   console.log(response.hits[0].recipe.label)
-    //   for (i = 0; i < ingLoop.length; i++) {
-    //   console.log(ingLoop[i].text)}
-    //   console.log(response.hits[0].recipe.source)
-    //   console.log(response.hits[0].recipe.url)
-    //   console.log(response.hits[0].recipe.yield)
-    //   console.log(testResponse)
-    // });
+    
 });
-
-
-
-
-   // var imdataProduct = "product_identifier=014100044208";
-    // var imURL = "https://www.iamdata.co/v1/products?"+imdataProduct+"&page=1&per_page=10&full_resp=false&client_id=" + imdataKey + "&client_secret=" + imdataSKey;
-    // $.ajax({
-    //   url: imURL,
-    //   method: 'GET'
-    // }).done(function(response) {
-    //   console.log(response)
-    // });
 

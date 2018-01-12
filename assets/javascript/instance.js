@@ -1,4 +1,4 @@
-(function () {
+$(function () {
 
   // Initialize Firebase
   var config = {
@@ -52,13 +52,13 @@
   let loginState = function (){
     btnLogout.classList.remove('hide');
     btnLogin.classList.add('hide');
-    btnSignUp.classList.add('hide');
+    
   };
 
   let logoutState = function (){
     btnLogout.classList.add('hide');
     btnLogin.classList.remove('hide');
-    btnSignUp.classList.remove('hide');
+    
   };
   // add realtime listener
   firebase.auth().onAuthStateChanged(firebaseUser => {
