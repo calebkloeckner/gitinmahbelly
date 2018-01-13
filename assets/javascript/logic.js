@@ -26,7 +26,6 @@ $(document).ready(function () {
             <p class='content-text foodish' data-button='${JSON.stringify(recipes[i])}' data-id='${i}'>${recipes[i].title}</p>
           </div>
         </div>`);
-      console.log(recipes[i].image)
     }};
     
     topRecipes();
@@ -118,9 +117,10 @@ $(document).ready(function () {
     $('.modal').modal();
       // on click function to open the modal
       $(document).on('click', ".foodish", function () {
-        console.log(this)
+        console.log(this);
         let clicky = JSON.parse($(this).attr("data-button"));
         let clickedId = $(this).attr("data-id");
+        clickedmodal = clickedId;
         console.log(clicky);
         $('#modal1').modal('open');
           // displays the object insie the modal
@@ -136,10 +136,11 @@ $(document).ready(function () {
             let item = $('<p>').html(clicky.ingredients[i]);
             $("#recipe-body").append(item);
           }
-          $("#recipe-name").html(recipeTitle).append("<img src='#' id='recipe-image'>");
+          $("#recipe-name").html(recipeTitle).prepend("<img src='images/heart.png' class='favorite-ID' type='button' status='0'>").append("<img src='#' id='recipe-image'>");
           $("#recipe-image").attr("src", recipeImage);
           $("#recipe-url").attr("href", recipeUrl);
           console.log(recipeUrl);
+          favoriteFunctionLoad();
           console.log("boogers");
       });
       
@@ -155,14 +156,11 @@ $(document).ready(function () {
               image: response.hits[i].recipe.image,
               link: response.hits[i].recipe.url
             });
-          console.log(response.hits[i].recipe.image);
           }
           topRecipes();
       });
 
-      // save button to save to firebase
-
-      
+      // save button to save to firebase      
     $(".save-button").on("click", function(event) {
       console.log(clicky);
       event.preventDefault();
@@ -171,7 +169,6 @@ $(document).ready(function () {
   firebase.database().ref().on("child_added", function(childSnapshot, prevChildKey){
     
       let savedRecipe = childSnapshot.val();
-      console.log(childSnapshot.val());
       $(".my-recipes-title").append(savedRecipe.title).append("<img src='#' id='my-recipe-image'>");
       let i;
       for (i = 0; i < savedRecipe.ingredients.length; i++) {
