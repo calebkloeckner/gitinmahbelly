@@ -59,7 +59,6 @@ $(document).ready(function () {
             buttonV.attr('id', `ing-${text1}`);
             buttonV.attr('data-button', text1);
             edamIng.push(text1);
-              $('.search-button').click();
             }
             else {
                 $('.search-button').click();
