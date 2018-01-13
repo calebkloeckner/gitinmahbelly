@@ -4,12 +4,12 @@ $(function () {
 
   // Initialize Firebase
   var config = {
-    apiKey: "AIzaSyB18wvzow75U6zmE__jK4znPUgqMWTr8KM",
-    authDomain: "gitinmahbelly-c20b8.firebaseapp.com",
-    databaseURL: "https://gitinmahbelly-c20b8.firebaseio.com",
-    projectId: "gitinmahbelly-c20b8",
-    storageBucket: "gitinmahbelly-c20b8.appspot.com",
-    messagingSenderId: "862051069450"
+    apiKey: "AIzaSyC5OK8uabGUBOv6UPTufvpmamGwNqYYLGI",
+    authDomain: "gitinmahbellyapp.firebaseapp.com",
+    databaseURL: "https://gitinmahbellyapp.firebaseio.com",
+    projectId: "gitinmahbellyapp",
+    storageBucket: "gitinmahbellyapp.appspot.com",
+    messagingSenderId: "159443637055"
   };
   firebase.initializeApp(config);
 
