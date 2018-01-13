@@ -1,13 +1,13 @@
-$(function () {
+(function () {
 
   // Initialize Firebase
   var config = {
-    apiKey: "AIzaSyC5OK8uabGUBOv6UPTufvpmamGwNqYYLGI",
-    authDomain: "gitinmahbellyapp.firebaseapp.com",
-    databaseURL: "https://gitinmahbellyapp.firebaseio.com",
-    projectId: "gitinmahbellyapp",
-    storageBucket: "gitinmahbellyapp.appspot.com",
-    messagingSenderId: "159443637055"
+    apiKey: "AIzaSyB18wvzow75U6zmE__jK4znPUgqMWTr8KM",
+    authDomain: "gitinmahbelly-c20b8.firebaseapp.com",
+    databaseURL: "https://gitinmahbelly-c20b8.firebaseio.com",
+    projectId: "gitinmahbelly-c20b8",
+    storageBucket: "gitinmahbelly-c20b8.appspot.com",
+    messagingSenderId: "862051069450"
   };
   firebase.initializeApp(config);
 
@@ -52,13 +52,13 @@ $(function () {
   let loginState = function (){
     btnLogout.classList.remove('hide');
     btnLogin.classList.add('hide');
-    
+    btnSignUp.classList.add('hide');
   };
 
   let logoutState = function (){
     btnLogout.classList.add('hide');
     btnLogin.classList.remove('hide');
-    
+    btnSignUp.classList.remove('hide');
   };
   // add realtime listener
   firebase.auth().onAuthStateChanged(firebaseUser => {
