@@ -165,10 +165,11 @@ h6 {
 }
 
 .my-recipes {
-  /* border: 1px solid black; */
+  border: 1px solid black;
   padding: 20px;
-  width: 100%;
-  min-height: 200px;
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
 }
 
 .searched-ingredients {
@@ -178,10 +179,10 @@ h6 {
 
 
 .search-container{
-  width: 800px;
+  width: 490px !important;
   display: block;
   margin: 0 auto;
-  padding-top: 3%;
+  padding: 0px;
   height: 65px;
 }
 
@@ -270,14 +271,6 @@ input#search-bar{
   .header2 {
     font-size: 72pt;
   }
-
-  .search-container{
-    width: 300px;
-    display: block;
-    margin: 0 auto;
-    padding-top: 3%;
-    height: 65px;
-  }
 }
 
 @media only screen and (max-width: 850px) {
@@ -307,14 +300,6 @@ input#search-bar{
     font-size: 72pt;
   }
 
-  .search-container{
-    width: 400px;
-    display: block;
-    margin: 0 auto;
-    padding-top: 3%;
-    height: 65px;
-  }
-
 }
 
 .ingredient-button {
@@ -334,6 +319,7 @@ input#search-bar{
 }
 
 /* Calebs addition */
+
 
 #recipe-body {
   font-size: 10px;
@@ -406,8 +392,7 @@ li {
   font-weight: bolder;
   padding-left: 1em;
   padding-right: 1em;
-  width: auto;
-  text-align: center;
+  width: 100%;
   top: 30%;
   left: 50%;
   opacity: 0;
