@@ -14,7 +14,6 @@ $(document).ready(function () {
     console.log(recipes);
     $("#top-recipes").empty();
     for (var i = 0; i < recipes.length; i++) {
-      console.log(recipes[i]);
       $("#top-recipes").prepend(`
         <div class='card content foodtag' id='test'>
           <div class='card-image'>
