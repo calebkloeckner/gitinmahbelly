@@ -335,13 +335,29 @@ input#search-bar{
 
 /* Calebs addition */
 
+.food {
+  margin: .3%;
+  border: 0px;
+  padding: 0px;
+  margin: 0px;
+  width: 250px;
+  height: 300px;
+}
 #recipe-body {
-  font-size: 10px;
+  font-size: inherit;
 }
 
 #recipe-image{
   border-radius: 8px;
   float: right;
+}
+
+#saved-recipes{
+  border: solid black 3px;
+}
+.my-recipes-image {
+  height: 200px;
+  width: 200px;
 }
 
 
@@ -355,11 +371,6 @@ li {
   align-content: left;
 }
 
-.food {
-  width: 250px;
-  height: 150px;
-  border: 0px solid;
-}
 
 /*floating title css*/
 *, :before, :after {

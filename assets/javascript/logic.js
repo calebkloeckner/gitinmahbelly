@@ -118,7 +118,7 @@ $(document).ready(function () {
       // on click function to open the modal
       $(document).on('click', ".foodish", function () {
         console.log(this);
-        let clicky = JSON.parse($(this).attr("data-button"));
+        clicky = JSON.parse($(this).attr("data-button"));
         let clickedId = $(this).attr("data-id");
         clickedmodal = clickedId;
         console.log(clicky);
@@ -141,7 +141,6 @@ $(document).ready(function () {
           $("#recipe-url").attr("href", recipeUrl);
           console.log(recipeUrl);
           favoriteFunctionLoad();
-          console.log("boogers");
       });
       
       $.ajax({
