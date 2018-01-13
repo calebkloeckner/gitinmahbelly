@@ -262,6 +262,15 @@ input#search-bar{
   border-radius: 8px;
   float: right;
 }
+
+#saved-recipes{
+  border: solid black 3px;
+}
+.my-recipes-image {
+  height: 200px;
+  width: 200px;
+}
+
 /* Dante addition
 */
 h1 {

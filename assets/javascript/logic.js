@@ -22,6 +22,7 @@ let recipes = [];
 let clicky;
 
 
+
 // let database = firebase.database();
 
 console.log("working");
@@ -190,18 +191,22 @@ $(document).ready(function () {
         firebase.database().ref().push(clicky);
     });
     firebase.database().ref().on("child_added", function(childSnapshot, prevChildKey){
-      
+        
         let savedRecipe = childSnapshot.val();
-        console.log(childSnapshot.val());
-        $(".my-recipes-title").append(savedRecipe.title).append("<img src='#' id='my-recipe-image'>");
-        let i;
-        for (i = 0; i < savedRecipe.ingredients.length; i++) {
-            let item = $('<p>').html(savedRecipe.ingredients[i]);
-            $(".my-recipe-instruction").append(item);
-        }
-        $(".my-recipes-image").append(savedRecipe.image);
-        $(".my-recipes-link").append(savedRecipe.link);
 
+        
+        console.log(childSnapshot.val());
+        
+        // $("#saved-recipes").append("<h5 class='my-recipes-title'></h5>" + savedRecipe.title + '<p>' + "<h3 class='my-recipes-instruction'></h3>" + '<p>' + savedRecipe.ingredients + "<img src=" + savedRecipe.image + " class='my-recipes-image'>" + '<p>' + '<a href='+ savedRecipe.link + "id='my-recipe-url'>Click for full recipe</a>");
+        $('#saved-recipes').append(
+            `
+              <h5 class="my-recpes-title">${savedRecipe.title}</h5> 
+              <h5 class="my-recipes-instructon">${savedRecipe.ingredients}</h5>
+              <img src="${savedRecipe.image}" class="my-recipes-image" alt="${savedRecipe.title}" /> <br/>
+              <a href="${savedRecipe.link}" id="my-recipe-url">Click for full recipe</a>
+            `
+          );
+       
     });
     $.ajax({
         url: edamURL,
