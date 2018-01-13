@@ -1,5 +1,3 @@
-// revert mike
-
 $(function () {
 
   // Initialize Firebase
