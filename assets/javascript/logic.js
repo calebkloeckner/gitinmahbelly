@@ -77,6 +77,7 @@ $(document).ready(function () {
         
         // runs API call
         $('.search-button').on('click', function () {
+          console.log(edamIng);
           for (let i = 0; i < edamIng.length; i++) {
             edamIng = edamIng.toString().replace(",", "%20");
           };
