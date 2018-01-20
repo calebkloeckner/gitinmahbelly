@@ -36,13 +36,14 @@ let favoritesCheck = [];
 let indexOfRecipeToCheck = [];
 var savedRecipe =[];
 
-function favoriteFunctionLoad() {
+function favoriteFunctionLoad(refSource, refDatabase) {
     console.log("favorited? ?");
     // modal opened --> indexOfRecipeToCheck;
     indexOfRecipeToCheck = [recipes[clickedmodal]];
 
     //checkFavs = check favorites in database if indexOfRecipeToCheck exists.
-    var checkFavs = findOne(favorites,indexOfRecipeToCheck);
+    var checkFavs = findOne(refSource,refDatabase);
+    // var checkFavs = findOne(favorites,indexOfRecipeToCheck);
     if (checkFavs === true){
         $(".favorite-ID").attr("src", "images/like.png").attr("status", "1");
         console.log('true return')
@@ -70,7 +71,7 @@ $(document).on('click', ".favorite-ID", function () {
         favoritesCheck.push(recipes)
         findOne(favoritesCheck, favorites);
     };
-    favoriteFunctionLoad();
+    favoriteFunctionLoad(favorites, indexOfRecipeToCheck);
     console.log(favorites);
     databasePush.push(favorites);
     console.log(favorites)
@@ -114,7 +115,7 @@ $(document).ready(function(){
                     $("#recipe-image").attr("src", recipeImage);
                     $("#recipe-url").attr("href", recipeUrl);
                     console.log(recipeUrl);
-                    favoriteFunctionLoad();
+                    favoriteFunctionLoad(favorites, indexOfRecipeToCheck);
                 });
         
 });
