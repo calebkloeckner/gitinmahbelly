@@ -32,16 +32,16 @@ $(function () {
 
   // add sign up event
 
-  btnSignUp.addEventListener('click', e => {
-    // get email and pass
-    const email = txtEmail.value;
-    const pass = txtPassword.value;
-    const auth = firebase.auth();
-    // sign in
-    const promise = auth.createUserWithEmailAndPassword(email, pass);
-    promise.catch(e => console.log(e.message));
+  // btnSignUp.addEventListener('click', e => {
+  //   // get email and pass
+  //   const email = txtEmail.value;
+  //   const pass = txtPassword.value;
+  //   const auth = firebase.auth();
+  //   // sign in
+  //   const promise = auth.createUserWithEmailAndPassword(email, pass);
+  //   promise.catch(e => console.log(e.message));
 
-  });
+  // });
 
   btnLogout.addEventListener('click', e => {
     firebase.auth().signOut();

@@ -27,16 +27,21 @@ var edamURL = 'https://api.edamam.com/search?q='+edamIng+'&app_id='+edamAppID+'&
 var clickedmodal = "";
 var testResponse = {};
 let recipes = [];
-let clicky;
+var modalParse;
 
 let database = firebase.database();
+var databasePush = firebase.database().ref();
 let favorites = [];
 let favoritesCheck = [];
 let indexOfRecipeToCheck = [];
+var savedRecipe =[];
 
 function favoriteFunctionLoad() {
     console.log("favorited? ?");
+    // modal opened --> indexOfRecipeToCheck;
     indexOfRecipeToCheck = [recipes[clickedmodal]];
+
+    //checkFavs = check favorites in database if indexOfRecipeToCheck exists.
     var checkFavs = findOne(favorites,indexOfRecipeToCheck);
     if (checkFavs === true){
         $(".favorite-ID").attr("src", "images/like.png").attr("status", "1");
@@ -48,9 +53,12 @@ function favoriteFunctionLoad() {
 }
 
 $(document).on('click', ".favorite-ID", function () {
-    favoriteFunctionLoad();
+
     console.log("Checking favorites");
+    // modal opened --> indexOfRecipeToCheck;
     indexOfRecipeToCheck = [recipes[clickedmodal]];
+
+    //checkFavs = check favorites in database if indexOfRecipeToCheck exists.
     var checkFavs = findOne(favorites,indexOfRecipeToCheck);
     if (checkFavs === true){
         $(".favorite-ID").attr("src", "images/heart.png").attr("status", "0");
@@ -62,6 +70,12 @@ $(document).on('click', ".favorite-ID", function () {
         favoritesCheck.push(recipes)
         findOne(favoritesCheck, favorites);
     };
+    favoriteFunctionLoad();
+    console.log(favorites);
+    databasePush.push(favorites);
+    console.log(favorites)
+    console.log('-----')
+
 });
 
 $(document).ready(function(){
@@ -73,4 +87,34 @@ $(document).ready(function(){
         $(".content-overlay").css({"opacity": "0"});
         $(".content-details").css({"top": "0", "left": "0", "opacity": "0"});
     });
+                // modal display
+                $('.modal').modal();
+                // on click function to open the modal
+                $(document).on('click', ".foodish", function () {
+                  console.log(this);
+                  modalParse = JSON.parse($(this).attr("data-button"));
+                  let clickedId = $(this).attr("data-id");
+                  clickedmodal = clickedId;
+                  console.log(modalParse);
+                  $('#modal1').modal('open');
+                    // displays the object insie the modal
+                    let recipeTitle = modalParse.title;
+                    let recipeBody = modalParse.ingredients;
+                    let recipeImage = modalParse.image;
+                    let recipeUrl = modalParse.link;
+                    console.log(recipeTitle);
+                    console.log(modalParse.ingredients);
+                    // for loop to add each ingredient to its own line with a <p> tag
+                    let i;
+                    for (i = 0; i < modalParse.ingredients.length; i++) {
+                      let item = $('<p>').html(modalParse.ingredients[i]);
+                      $("#recipe-body").append(item);
+                    }
+                    $("#recipe-name").html(recipeTitle).prepend("<img src='images/heart.png' class='favorite-ID' type='button' status='0'>").append("<img src='#' id='recipe-image'>");
+                    $("#recipe-image").attr("src", recipeImage);
+                    $("#recipe-url").attr("href", recipeUrl);
+                    console.log(recipeUrl);
+                    favoriteFunctionLoad();
+                });
+        
 });
