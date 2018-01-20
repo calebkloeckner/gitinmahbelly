@@ -14,10 +14,7 @@ $(document).ready(function () {
     console.log(recipes);
     $("#top-recipes").empty();
     for (var i = 0; i < recipes.length; i++) {
-<<<<<<< HEAD
       // console.log(recipes[i]);
-=======
->>>>>>> d662c59bf0c6adcd498ebe8f608493655b110431
       $("#top-recipes").prepend(`
         <div class='card content foodtag' id='test'>
           <div class='card-image'>
@@ -110,55 +107,7 @@ $(document).ready(function () {
             }
             topRecipes();
         });
-<<<<<<< HEAD
       });
-=======
-
-        // removes buttons created by the search bar
-        $(document).on('click', ".ingredient-button", function () {
-          let removeAct = $(this).attr("data-button");
-          let removeActId = $(this).attr("id");
-          var indexInArrayToRemove = edamIng.indexOf($(this).attr("data-button"));
-          delete edamIng[indexInArrayToRemove];
-          $(this).remove(); 
-          edamIng.splice(indexInArrayToRemove, 1);
-        });
-        
-        // runs API call
-        $('.search-button').on('click', function () {
-          console.log(edamIng);
-          for (let i = 0; i < edamIng.length; i++) {
-            edamIng = edamIng.toString().replace(",", "%20");
-          };
-          var edamURL = 'https://api.edamam.com/search?q='+edamIng+'&app_id='+edamAppID+'&app_key='+edamAppKey;
-            console.log("search executing");
-            $.ajax({
-              url: edamURL,
-              method: 'GET'
-            }).done(function (response) {
-                if (response.count >=8) {
-                  for (let i = 0; i < 8; i++) 
-                    recipes.push({
-                      title: response.hits[i].recipe.label,
-                      ingredients: response.hits[i].recipe.ingredientLines,
-                      image: response.hits[i].recipe.image,
-                      link: response.hits[i].recipe.url
-                    })
-                  }
-                else {
-                  for (let i = 0; i < response.count; i++) {
-                    recipes.push({
-                      title: response.hits[i].recipe.label,
-                      ingredients: response.hits[i].recipe.ingredientLines,
-                      image: response.hits[i].recipe.image,
-                      link: response.hits[i].recipe.url
-                    })
-                  };
-                }
-                topRecipes();
-            });
-        });
->>>>>>> d662c59bf0c6adcd498ebe8f608493655b110431
 
       testResponse = response;
       var ingLoop = response.hits[0].recipe.ingredients;
