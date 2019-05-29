@@ -1,3 +1,32 @@
+
+function getRandomInt(max) {
+    return Math.floor(Math.random() * Math.floor(max));
+  }
+
+const gifkey = "JFlbvY7o0WgDcLH8D9vc7jlFL5hMW2Dl";
+const imdataKey = "c6TNwjpz";
+const imdataSKey = "J8adbvz3Bs5KLJ2nTeFRXSAwKNUanpar";
+var imdataProduct = "";
+var runI = 0;
+
+const edamAppID = "c1724022";
+const edamAppKey = "cdded1f6d7a29716aec7adcec57b419e";
+
+var edamIng = [];  //Spaces need to be translated to %20. required 
+var edamIngRandom = ['beef', 'pork', 'chicken', 'ramen', 'apple%20cherry', 'milk%20corn', 'curry']
+edamIng.push(edamIngRandom[getRandomInt(edamIngRandom.length)]);
+var edamURL = 'https://api.edamam.com/search?q='+edamIng+'&app_id='+edamAppID+'&app_key='+edamAppKey;
+
+var testResponse = {};
+
+let recipes = [];
+let clicky;
+
+
+
+// let database = firebase.database();
+
+
 console.log("working");
 // $(toggle-class)
 
@@ -10,7 +39,6 @@ $(document).ready(function () {
         e.preventDefault();
     });
 
-  let recipes = [];
   function topRecipes() {
     console.log(recipes);
     $("#top-recipes").empty();
@@ -24,11 +52,9 @@ $(document).ready(function () {
             </div>
           </div>
           <div class='card-content content-details fadeIn'>
-            <p class='content-text foodish' alt='${JSON.stringify(recipes[i])}' data-id='${i}'>${recipes[i].title}</p>
+            <p class='content-text foodish' data-button='${JSON.stringify(recipes[i])}' data-id='${i}'>${recipes[i].title}</p>
           </div>
         </div>`);
-
-      console.log(recipes[i].image)
     }};
     
     topRecipes();
@@ -118,11 +144,14 @@ $(document).ready(function () {
 
     // modal display
     $('.modal').modal();
+
       // on click function to open the modal
       $(document).on('click', ".foodish", function () {
-        console.log(this)
-        let clicky = JSON.parse($(this).attr("alt"));
+        console.log(this);
+
+        clicky = JSON.parse($(this).attr("data-button"));
         let clickedId = $(this).attr("data-id");
+        clickedmodal = clickedId;
         console.log(clicky);
         $('#modal1').modal('open');
           // displays the object insie the modal
@@ -137,15 +166,45 @@ $(document).ready(function () {
           for (i = 0; i < clicky.ingredients.length; i++) {
             let item = $('<p>').html(clicky.ingredients[i]);
             $("#recipe-body").append(item);
+
+       
+
+    // save button to save to firebase
+    $(".save-button").on("click", function(event) {
+        console.log(clicky);
+        event.preventDefault();
+        firebase.database().ref().push(clicky);
+    });
+    firebase.database().ref().on("child_added", function(childSnapshot, prevChildKey){
+        
+        let savedRecipe = childSnapshot.val();
+
+        
+        console.log(childSnapshot.val());
+        
+      
+        $('#saved-recipes').append(
+            `
+              <h5 class="my-recpes-title">${savedRecipe.title}</h5> 
+              <h5 class="my-recipes-instructon">${savedRecipe.ingredients}</h5>
+              <img src="${savedRecipe.image}" class="my-recipes-image" alt="${savedRecipe.title}" /> <br/>
+              <a href="${savedRecipe.link}" id="my-recipe-url">Click for full recipe</a>
+            `
+          );
+       
+    });
+    $.ajax({
+
           }
-          $("#recipe-name").html(recipeTitle).append("<img src='#' id='recipe-image'>");
+          $("#recipe-name").html(recipeTitle).prepend("<img src='images/heart.png' class='favorite-ID' type='button' status='0'>").append("<img src='#' id='recipe-image'>");
           $("#recipe-image").attr("src", recipeImage);
           $("#recipe-url").attr("href", recipeUrl);
           console.log(recipeUrl);
-          console.log("boogers");
+          favoriteFunctionLoad();
       });
       
       $.ajax({
+
         url: edamURL,
         method: 'GET'
       }).done(function (response) {
@@ -157,8 +216,9 @@ $(document).ready(function () {
               image: response.hits[i].recipe.image,
               link: response.hits[i].recipe.url
             });
-          console.log(response.hits[i].recipe.image);
           }
           topRecipes();
       });
+
+    
 });
